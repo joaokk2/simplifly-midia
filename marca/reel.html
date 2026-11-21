@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<link rel="stylesheet" href="base.css">
+<style>
+html,body{margin:0;background:#000}
+#v{width:1080px;height:1920px;position:relative;overflow:hidden}
+.L{position:absolute;inset:0;will-change:transform,opacity}
+.bgd{background:radial-gradient(120% 80% at 80% 5%,#0E8C80 0%,#00665E 35%,#033F3A 75%,#022C29 100%)}
+.bgl{background:var(--bg)}
+.glow{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(255,120,59,.32),transparent 65%)}
+.T{position:absolute;left:80px;right:80px;font-family:'Inter Display','Inter',sans-serif;font-weight:900;letter-spacing:-.045em;line-height:.95;color:#fff;transform-origin:0 50%}
+.T.ink{color:var(--ink)}
+.kk{position:absolute;left:80px;font-weight:700;font-size:30px;letter-spacing:.14em;text-transform:uppercase;color:#BFE6E1;display:flex;gap:14px;align-items:center}
+.kk i{width:14px;height:14px;border-radius:50%;background:var(--c)}
+.flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
+.clock{position:absolute;left:0;right:0;text-align:center;font-family:'Inter Display';font-weight:900;color:#fff;letter-spacing:-.04em}
+.typing{display:inline-flex;gap:8px;padding:22px 26px;background:var(--t);border-radius:22px}
+.typing i{width:12px;height:12px;border-radius:50%;background:#fff;display:block}
+.urlbox{position:absolute;left:80px;right:80px;background:#fff;border-radius:28px;padding:30px 36px;font-size:44px;font-weight:800;color:var(--ink);display:flex;align-items:center;gap:18px;box-shadow:0 30px 60px rgba(0,0,0,.3)}
+.btnc{position:absolute;left:80px;background:var(--c);color:#fff;font-weight:800;font-size:48px;padding:32px 52px;border-radius:99px;box-shadow:0 26px 50px rgba(255,120,59,.45)}
+.cmtL{position:absolute;left:80px;right:80px;font-size:40px;font-weight:600;color:#D6EEEB}
+.cmtL b{color:#fff;background:rgba(255,255,255,.14);padding:4px 16px;border-radius:12px}
+</style></head><body>
+<div id="v"></div>
+<script>
+const V=new URLSearchParams(location.search).get('v')||'1';
+const $=(h)=>{const d=document.createElement('div');d.innerHTML=h.trim();return d.firstChild};
+const R=document.getElementById('v');
+const k=(t,a,b,e)=>{let x=Math.min(1,Math.max(0,(t-a)/(b-a)));return e?e(x):x};
+const out=x=>1-Math.pow(1-x,3), expo=x=>x===1?1:1-Math.pow(2,-10*x), io=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const back=x=>{const c=1.7;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const mix=(a,b,p)=>a+(b-a)*p;
+function slam(el,t,t0,from=1.5,dur=.28){const p=k(t,t0,t0+dur,expo);el.style.opacity=t<t0?0:Math.min(1,p*2);el.style.transform=`scale(${mix(from,1,p)})`}
+function show(el,on){el.style.display=on?'':'none'}
+function shake(t,t0,amp=18){if(t<t0||t>t0+.4)return 0;const d=(t-t0)/.4;return amp*Math.exp(-5*d)*Math.sin(d*60)}
+function flash(el,t,t0){el.style.opacity=t>=t0&&t<t0+.18?(1-(t-t0)/.18)*.85:0}
+const WA='<svg width="34" height="34" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>';
+const IG='<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>';
+function notif(name,msg,time,ig){return $(`<div class="notif" style="width:880px;left:100px;padding:26px 30px"><div class="ic ${ig?'ig':'wa'}" style="width:76px;height:76px;border-radius:20px">${ig?IG:WA}</div><div><b style="font-size:30px">${name}</b><span style="font-size:28px">${msg}</span></div><em style="font-size:24px">${time}</em></div>`)}
+function appMock(){return $(`<div class="app" style="left:40px;top:640px;width:1000px;height:820px;color:var(--ink)">
+<div class="side"><img class="lg" src="icone.svg"><div class="ico on"></div><div class="ico"></div><div class="ico"></div></div>
+<div class="list" style="width:420px"><div class="top">Conversas <span class="cnt">12</span></div>
+<div class="chips"><span class="chip on">Todas</span><span class="chip">Minhas</span><span class="chip">IA</span></div>
+${[['Mariana','Loja 1','#25D366','Tem no 37?','#E58A5B'],['@carla.store','Insta','#D62976','Qual o frete?','#7B6CF6'],['Rafael','Loja 2','#25D366','Ainda tem o preto?','#2F9E8F'],['Juliana','Vendas','#25D366','Manda o link?','#E2B23A'],['@bia.modas','Insta','#D62976','Vocês entregam hoje?','#5B8DEF']].map((r,i)=>`<div class="it ${i==0?'on':''} row${i}"><div class="av" style="width:58px;height:58px;background:${r[4]};font-size:24px">${r[0][0]=='@'?r[0][1].toUpperCase():r[0][0]}</div><div class="tx"><b style="font-size:23px">${r[0]} <span class="tagc" style="background:${r[2]}">${r[1]}</span></b><p style="font-size:20px">${r[3]}</p></div></div>`).join('')}
+</div>
+<div class="conv"><div class="hd"><div class="av" style="width:52px;height:52px;background:#E58A5B;font-size:22px">M</div><div><b>Mariana</b><br><span>WhatsApp · Loja 1</span></div></div>
+<div class="bd"><div class="cm ci" style="font-size:22px">Oi! Tem esse tênis no 37?</div><div class="cm cmo r1" style="font-size:22px">Tem sim! Separei um pra você. Quer o link de pagamento?</div><div class="ai r2"><i></i>Respondido pela IA em 4s</div><div class="cm ci r3" style="font-size:22px">Quero! 🙌</div></div></div></div>`)}
+function cta(){return $(`<div class="L bgd grain"><div class="glow" style="width:1100px;height:1100px;left:-450px;bottom:-300px"></div>
+<img src="icone.svg" class="ctaIc" style="position:absolute;left:80px;top:430px;width:170px;height:170px;border-radius:46px;box-shadow:0 0 0 10px rgba(255,255,255,.15)">
+<div class="T ctaT" style="top:680px;font-size:120px">Tudo numa<br><span class="mark">tela só.</span></div>
+<div class="urlbox ctaU" style="top:1020px"><span style="width:20px;height:20px;border-radius:50%;background:var(--c)"></span><span class="url"></span><span class="car" style="width:4px;height:48px;background:var(--ink)"></span></div>
+<div class="cmtL ctaC" style="top:1200px">Comenta <b>SIMPLIFLY</b> que eu te mando como funciona.</div>
+<img src="logo-white.svg" style="position:absolute;left:80px;bottom:330px;height:66px" class="ctaL"></div>`)}
+function ctaRender(L,t,t0){const u='simpliflyone.com';const ic=L.querySelector('.ctaIc'),T=L.querySelector('.ctaT'),U=L.querySelector('.ctaU'),C=L.querySelector('.ctaC'),Lg=L.querySelector('.ctaL');
+ const p=k(t,t0,t0+.5,back);ic.style.transform=`scale(${p})`;slam(T,t,t0+.25,1.4);
+ const pu=k(t,t0+.7,t0+1.0,out);U.style.opacity=pu;U.style.transform=`translateY(${(1-pu)*40}px)`;
+ const n=Math.floor(k(t,t0+.9,t0+1.9)*u.length);U.querySelector('.url').textContent=u.slice(0,n);U.querySelector('.car').style.opacity=(Math.floor(t*3)%2)?1:0;
+ const pc=k(t,t0+1.9,t0+2.3,out);C.style.opacity=pc;C.style.transform=`translateY(${(1-pc)*30}px)`;Lg.style.opacity=k(t,t0+.4,t0+.9)}
+
+/* ====== VARIANTS ====== */
+const S={};let DUR=12;
+function bgDark(){const L=$('<div class="L bgd grain"><div class="glow" style="width:1100px;height:1100px;right:-450px;top:-350px"></div></div>');R.appendChild(L);return L}
+const FL=$('<div class="flash"></div>');
+
+if(V=='1'){ // 3 números
+ const A=bgDark();
+ const kk=$('<div class="kk" style="top:260px"><i></i>Sua loja hoje</div>');A.appendChild(kk);
+ const t1=$('<div class="T" style="top:340px;font-size:140px">3 números.</div>'),t2=$('<div class="T" style="top:490px;font-size:140px">4 celulares.</div>'),t3=$('<div class="T" style="top:640px;font-size:140px;color:var(--c);white-space:nowrap">Zero controle.</div>');[t1,t2,t3].forEach(e=>A.appendChild(e));
+ const phones=[];const lab=[['Loja 1',0],['Loja 2',0],['Vendas',0],['Direct',1]];
+ lab.forEach((l,i)=>{const p=$(`<div class="phone" style="width:260px;height:520px;border-radius:46px;padding:9px;left:${60+i*240}px;top:${1060+(i%2)*60}px"><div class="scr" style="border-radius:38px;background:#fff;align-items:center;justify-content:center;gap:14px"><div class="ic ${l[1]?'ig':'wa'}" style="width:100px;height:100px;border-radius:28px;display:flex;align-items:center;justify-content:center">${l[1]?IG:WA}</div><b style="font-size:28px">${l[0]}</b></div><div class="cnt bd" style="position:absolute;top:-24px;right:-24px;width:84px;height:84px;font-size:34px">0</div></div>`);A.appendChild(p);phones.push(p)});
+ const B=$('<div class="L bgd grain"></div>');R.appendChild(B);
+ B.appendChild($('<div class="kk" style="top:260px"><i></i>Com o Simplifly</div>'));
+ const bT=$('<div class="T" style="top:340px;font-size:130px">Tudo junto.<br><span class="mark">Nada perdido.</span></div>');B.appendChild(bT);
+ const app=appMock();B.appendChild(app);
+ const C=cta();R.appendChild(C);R.appendChild(FL);
+ S.render=t=>{show(A,t<6);show(B,t>=5.6&&t<9.4);show(C,t>=9.2);
+  slam(t1,t,0,1.6);slam(t2,t,.55,1.6);slam(t3,t,1.1,1.6);kk.style.opacity=k(t,0,.3);
+  phones.forEach((p,i)=>{const t0=1.6+i*.35;const pp=k(t,t0,t0+.45,back);const rot=[-12,-4,6,14][i];
+   const sh=shake(t,3.6+i*.2,10);p.style.transform=`translateY(${(1-pp)*1100}px) rotate(${rot+sh*.3}deg) translateX(${sh}px)`;
+   const n=Math.floor(k(t,t0+.3,5.2)*[38,52,17,24][i]);p.querySelector('.bd').textContent=n});
+  const tb=k(t,5.6,6.1,expo);B.style.transform=`translateY(${(1-tb)*1920}px)`;A.style.transform=`translateY(${-tb*600}px)`;
+  slam(bT,t,6.0,1.4);const pa=k(t,6.2,6.8,out);app.style.opacity=pa;app.style.transform=`translateY(${(1-pa)*120}px) scale(${mix(.94,1,pa)})`;
+  [['.r1',7.0],['.r2',7.5],['.r3',8.1]].forEach(([s,t0])=>{const e=app.querySelector(s);const q=k(t,t0,t0+.3,out);e.style.opacity=q;e.style.transform=`translateY(${(1-q)*20}px)`});
+  const tc=k(t,9.2,9.6,expo);C.style.transform=`translateY(${(1-tc)*1920}px)`;ctaRender(C,t,9.4);flash(FL,t,5.6);
+  R.style.transform=`translate(${shake(t,1.1,14)}px,0)`};
+}
+if(V=='2'){ // IA 2h da manhã
+ DUR=12;
+ const A=$('<div class="L" style="background:radial-gradient(120% 80% at 50% 0%,#12443F,#062421 70%)"></div>');R.appendChild(A);
+ const clk=$('<div class="clock" style="top:300px;font-size:260px">02:07</div>');A.appendChild(clk);
+ const sub=$('<div class="clock" style="top:600px;font-size:40px;font-weight:600;color:#9FD3CC;letter-spacing:0">sábado · sua loja fechada</div>');A.appendChild(sub);
+ const n1=notif('Paula','Oi! Ainda tem o vestido verde M?','02:07');n1.style.top='780px';A.appendChild(n1);
+ const bub=$('<div style="position:absolute;right:100px;top:1000px;max-width:760px;background:var(--t);color:#fff;border-radius:30px;border-top-right-radius:8px;padding:30px 34px;font-size:36px;line-height:1.3">Tem sim, Paula! Separei o seu. Quer que eu mande o link de pagamento? 💚</div>');A.appendChild(bub);
+ const typ=$('<div style="position:absolute;right:100px;top:1000px" class="typing"><i></i><i></i><i></i></div>');A.appendChild(typ);
+ const aiTag=$('<div style="position:absolute;right:100px;top:1250px;font-size:30px;font-weight:800;color:#7FE0D3;display:flex;gap:10px;align-items:center"><span style="width:14px;height:14px;border-radius:50%;background:#00D1BC"></span>Respondido pela IA em 4s</div>');A.appendChild(aiTag);
+ const hook=$('<div class="T" style="top:1380px;font-size:96px">A IA respondeu<br>às <span class="mark">2h da manhã.</span></div>');A.appendChild(hook);
+ const B=$('<div class="L bgl"></div>');R.appendChild(B);
+ const clk2=$('<div class="clock" style="top:300px;font-size:200px;color:var(--ink)">09:12</div>');B.appendChild(clk2);
+ const bT=$('<div class="T ink" style="top:640px;font-size:120px">E a venda<br>caiu <span style="color:var(--t)">às 9h.</span></div>');B.appendChild(bT);
+ const paid=$('<div class="notif" style="left:100px;top:1020px;width:880px;padding:28px 30px"><div class="ic" style="width:76px;height:76px;border-radius:20px;background:var(--t)"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></div><div><b style="font-size:30px">Pagamento aprovado</b><span style="font-size:28px">Paula · Vestido verde M</span></div><em style="font-size:24px">09:12</em></div>');B.appendChild(paid);
+ const bS=$('<div class="T ink" style="top:1260px;font-size:44px;font-weight:600;letter-spacing:0;line-height:1.3;color:var(--mut)">Enquanto você dormia, o Simplifly atendeu.</div>');B.appendChild(bS);
+ const C=cta();R.appendChild(C);R.appendChild(FL);
+ S.render=t=>{show(A,t<6.2);show(B,t>=5.8&&t<9.4);show(C,t>=9.2);
+  slam(clk,t,0,1.3);sub.style.opacity=k(t,.3,.7);
+  const p1=k(t,.6,1.0,back);n1.style.opacity=k(t,.6,.8);n1.style.transform=`translateY(${(1-p1)*-80}px)`;
+  typ.style.opacity=t>1.4&&t<2.6?1:0;typ.querySelectorAll('i').forEach((d,i)=>d.style.transform=`translateY(${Math.sin(t*12-i)*6}px)`);
+  const pb=k(t,2.6,2.95,back);bub.style.opacity=k(t,2.6,2.8);bub.style.transform=`scale(${mix(.8,1,pb)})`;bub.style.transformOrigin='100% 0';
+  aiTag.style.opacity=k(t,3.1,3.4);slam(hook,t,3.6,1.4);
+  const tb=k(t,5.8,6.3,expo);B.style.transform=`translateX(${(1-tb)*1080}px)`;A.style.transform=`translateX(${-tb*500}px)`;
+  slam(clk2,t,6.2,1.3);slam(bT,t,6.6,1.4);const pp=k(t,7.3,7.7,back);paid.style.opacity=k(t,7.3,7.5);paid.style.transform=`scale(${mix(.7,1,pp)})`;bS.style.opacity=k(t,8.0,8.4);
+  const tc=k(t,9.2,9.6,expo);C.style.transform=`translateY(${(1-tc)*1920}px)`;ctaRender(C,t,9.4);flash(FL,t,7.3)};
+}
+if(V=='3'){ // tem no 38
+ const A=$('<div class="L bgl"><div style="position:absolute;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(0,121,111,.14),transparent 65%);left:-300px;top:-250px"></div></div>');R.appendChild(A);
+ const hook=$('<div class="T ink" style="top:280px;font-size:170px">"Tem<br>no 38?"</div>');A.appendChild(hook);
+ const counter=$('<div style="position:absolute;right:80px;top:330px;width:240px;height:240px;border-radius:50%;background:var(--c);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;box-shadow:0 30px 60px rgba(255,120,59,.45)"><div class="cn disp" style="font-size:100px;font-weight:900;line-height:.9">0</div><div style="font-size:24px;font-weight:700">sem resposta</div></div>');A.appendChild(counter);
+ const msgs=[['Ana','Tem no 38?','10:02'],['@lu.calcados','Tem no 38? 🥺','10:04',1],['Bruna','Esse tem no 38?','10:05'],['@kaka.store','Tem 38 ainda?','10:07',1],['Rita','Tem no 38? Preciso hoje','10:09'],['Tati','38 tem?','10:11']];
+ const ns=msgs.map((m,i)=>{const n=notif(m[0],m[1],m[2],m[3]);n.style.top=(720+i*150)+'px';A.appendChild(n);return n});
+ const t2=$('<div class="T ink" style="top:1650px;font-size:76px">E você <span class="co">conferindo estoque.</span></div>');A.appendChild(t2);
+ const B=$('<div class="L" style="background:linear-gradient(160deg,#FF8A50 0%,#F0612A 45%,#B8401A 100%)"></div>');R.appendChild(B);
+ B.appendChild($('<div class="kk" style="top:260px;color:#FFE3D4"><i style="background:#fff"></i>Com o Simplifly</div>'));
+ const bT=$('<div class="T" style="top:340px;font-size:118px">A IA responde<br>na hora.</div>');B.appendChild(bT);
+ const app=appMock();B.appendChild(app);
+ const C=cta();R.appendChild(C);R.appendChild(FL);
+ S.render=t=>{show(A,t<6);show(B,t>=5.6&&t<9.4);show(C,t>=9.2);
+  slam(hook,t,0,1.6);const pc=k(t,.3,.6,back);counter.style.transform=`scale(${pc}) rotate(8deg)`;
+  ns.forEach((n,i)=>{const t0=.8+i*.42;const p=k(t,t0,t0+.35,back);n.style.opacity=k(t,t0,t0+.15);n.style.transform=`translateX(${(1-p)*(i%2?1:-1)*900}px) rotate(${(i%2?1.5:-1.5)}deg)`});
+  counter.querySelector('.cn').textContent=Math.floor(k(t,.8,4.8)*47);slam(t2,t,4.0,1.3);
+  const tb=k(t,5.6,6.1,expo);B.style.transform=`translateY(${(1-tb)*1920}px)`;A.style.transform=`translateY(${-tb*600}px)`;
+  slam(bT,t,6.0,1.4);const pa=k(t,6.2,6.8,out);app.style.opacity=pa;app.style.transform=`translateY(${(1-pa)*120}px)`;
+  [['.r1',7.0],['.r2',7.5],['.r3',8.1]].forEach(([s,t0])=>{const e=app.querySelector(s);const q=k(t,t0,t0+.3,out);e.style.opacity=q;e.style.transform=`translateY(${(1-q)*20}px)`});
+  const tc=k(t,9.2,9.6,expo);C.style.transform=`translateY(${(1-tc)*1920}px)`;ctaRender(C,t,9.4);flash(FL,t,5.6);
+  R.style.transform=`translate(${shake(t,4.0,12)}px,0)`};
+}
+if(V=='4'){ // live
+ const A=$('<div class="L" style="background:linear-gradient(180deg,#3A1F4A,#1A1030)"></div>');R.appendChild(A);
+ const live=$('<div style="position:absolute;left:80px;top:260px;display:flex;gap:16px;align-items:center"><span style="background:#E8344E;color:#fff;font-weight:900;font-size:34px;padding:10px 22px;border-radius:12px">AO VIVO</span><span class="vw" style="background:rgba(255,255,255,.18);color:#fff;font-weight:700;font-size:32px;padding:10px 22px;border-radius:12px">👁 0</span></div>');A.appendChild(live);
+ const hook=$('<div class="T" style="top:400px;font-size:150px">A live<br><span class="co">bombou.</span></div>');A.appendChild(hook);
+ const names=['bia','carol.m','duda','fe_lima','gabi','helo','isa.r','ju','karen','lari','mel','nanda','oli','pri','rafa','sol','tati','vivi'];
+ const cms=names.map((nm,i)=>{const c=$(`<div style="position:absolute;left:80px;display:flex;gap:16px;align-items:center;color:#fff;font-size:34px"><span class="av" style="width:56px;height:56px;background:hsl(${i*47},60%,55%);font-size:24px">${nm[0].toUpperCase()}</span><b>${nm}</b><span style="opacity:.9">eu quero! 🙋</span></div>`);A.appendChild(c);return c});
+ const t2=$('<div class="T" style="top:1600px;font-size:84px">Você responde 40.<br><span class="co">O resto esfria.</span></div>');A.appendChild(t2);
+ const B=$('<div class="L bgd grain"></div>');R.appendChild(B);
+ B.appendChild($('<div class="kk" style="top:260px"><i></i>Com o Simplifly</div>'));
+ const bT=$('<div class="T" style="top:340px;font-size:112px">Etiqueta, divide<br>e <span class="mark">dispara.</span></div>');B.appendChild(bT);
+ const tags=[['Pediu na live','var(--c)','186'],['Já pagou','var(--t2)','64'],['Falta pagar','#E2B23A','122']].map((g,i)=>{const e=$(`<div class="notif" style="left:100px;top:${720+i*190}px;width:880px;padding:30px"><div class="ic" style="width:76px;height:76px;border-radius:20px;background:${g[1]}"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></div><div><b style="font-size:32px">${g[0]}</b><span style="font-size:26px">etiqueta automática</span></div><em class="disp" style="font-size:48px;font-weight:900;color:var(--ink);align-self:center">${g[2]}</em></div>`);B.appendChild(e);return e});
+ const disp=$('<div class="btnc" style="top:1340px">Disparar para "Falta pagar" →</div>');B.appendChild(disp);
+ const C=cta();R.appendChild(C);R.appendChild(FL);
+ S.render=t=>{show(A,t<6);show(B,t>=5.6&&t<9.4);show(C,t>=9.2);
+  slam(hook,t,0,1.6);live.style.opacity=k(t,0,.2);live.querySelector('.vw').textContent='👁 '+Math.floor(k(t,0,5)*1240);
+  cms.forEach((c,i)=>{const t0=.7+i*.18;const y=1450-(t-t0)*260;c.style.top=y+'px';c.style.opacity=t<t0?0:Math.min(1,(t-t0)*4)*(y<900?Math.max(0,(y-800)/100):1)});
+  slam(t2,t,3.9,1.3);
+  const tb=k(t,5.6,6.1,expo);B.style.transform=`translateY(${(1-tb)*1920}px)`;A.style.transform=`translateY(${-tb*600}px)`;
+  slam(bT,t,6.0,1.4);tags.forEach((g,i)=>{const t0=6.5+i*.3;const p=k(t,t0,t0+.35,back);g.style.opacity=k(t,t0,t0+.15);g.style.transform=`translateX(${(1-p)*-900}px)`});
+  const pd=k(t,7.6,7.95,back);disp.style.transform=`scale(${pd*(1+.03*Math.sin(t*8)*(t>8?1:0))})`;
+  const tc=k(t,9.2,9.6,expo);C.style.transform=`translateY(${(1-tc)*1920}px)`;ctaRender(C,t,9.4);flash(FL,t,5.6)};
+}
+window.DUR=DUR;window.render=S.render;
+window.READY=document.fonts.ready.then(()=>Promise.all([...document.images].map(i=>i.complete?1:new Promise(r=>{i.onload=i.onerror=r}))));
+</script></body></html>
