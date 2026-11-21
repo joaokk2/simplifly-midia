@@ -154,6 +154,80 @@ if(V=='4'){ // live
   const pd=k(t,7.6,7.95,back);disp.style.transform=`scale(${pd*(1+.03*Math.sin(t*8)*(t>8?1:0))})`;
   const tc=k(t,9.2,9.6,expo);C.style.transform=`translateY(${(1-tc)*1920}px)`;ctaRender(C,t,9.4);flash(FL,t,5.6)};
 }
+
+if(V=='5'){ // narrado Andre: 3 numeros -> tela só
+ DUR=20;
+ const C5={n3:0.0,c4:1.80,dir:3.19,ning:5.53,emb:7.89,com:9.41,tela:10.77,fila:12.23,ia:13.96,cta:16.89};
+ const CAP=[[0,1.7,'3 números de WhatsApp.'],[1.8,3.1,'4 celulares.'],[3.19,5.4,'E o Direct do Instagram lotado.'],[5.53,7.8,'Ninguém sabe quem respondeu quem…'],[7.89,9.3,'E o cliente vai embora.'],[9.41,12.1,'Com o Simplifly, fica tudo numa tela só.'],[12.23,13.9,'Cada atendente com a sua fila,'],[13.96,16.7,'e a IA respondendo na hora.'],[16.89,19.9,'Comenta SIMPLIFLY 👇']];
+ const A=$('<div class="L bgl"><div style="position:absolute;width:1000px;height:1000px;border-radius:50%;background:radial-gradient(circle,rgba(255,120,59,.16),transparent 65%);right:-400px;top:-300px"></div></div>');R.appendChild(A);
+ const big=$('<div class="T ink" style="top:200px;font-size:400px;line-height:.85"><span class="d1">3</span></div>');A.appendChild(big);
+ const lab=$('<div class="T ink" style="top:560px;font-size:84px">números de<br><span style="color:#25A35A">WhatsApp</span></div>');A.appendChild(lab);
+ const phones=[];['Loja 1','Loja 2','Vendas','Pessoal'].forEach((l,i)=>{const p=$(`<div class="phone" style="width:250px;height:500px;border-radius:44px;padding:9px;left:${70+i*235}px;top:${800+(i%2)*70}px"><div class="scr" style="border-radius:36px;background:#fff;align-items:center;justify-content:center;gap:14px"><div class="ic wa" style="width:96px;height:96px;border-radius:26px;display:flex;align-items:center;justify-content:center">${WA}</div><b style="font-size:26px">${l}</b></div><div class="cnt bd" style="position:absolute;top:-22px;right:-22px;width:80px;height:80px;font-size:32px">0</div></div>`);A.appendChild(p);phones.push(p)});
+ const dms=[];[['@carla.store','Qual o frete?'],['@bia.modas','Tem no M?'],['@lu.calcados','Ainda tem? 🥺'],['@kaka.store','Preço?'],['@ju.boutique','Manda o link!']].forEach((m,i)=>{const n=notif(m[0],m[1],'agora',1);n.style.top=(560+i*140)+'px';A.appendChild(n);dms.push(n)});
+ const q=$('<div style="position:absolute;inset:0"></div>');A.appendChild(q);
+ const qs=[];for(let i=0;i<7;i++){const e=$(`<div class="disp" style="position:absolute;font-weight:900;color:var(--c);font-size:${120+(i%3)*60}px;left:${80+((i*263)%820)}px;top:${520+((i*397)%900)}px">?</div>`);q.appendChild(e);qs.push(e)}
+ const leave=$('<div style="position:absolute;left:0;right:0;top:700px;display:flex;flex-direction:column;align-items:center;gap:30px"><div class="av" style="width:260px;height:260px;background:#E58A5B;font-size:110px;box-shadow:0 30px 60px rgba(0,0,0,.2)">M</div><div class="sticker" style="position:relative;transform:rotate(-5deg);font-size:46px;padding:22px 36px">Venda perdida</div></div>');A.appendChild(leave);
+ const B=$('<div class="L bgd grain"><div class="glow" style="width:1100px;height:1100px;right:-450px;top:-350px"></div></div>');R.appendChild(B);
+ const bT=$('<div class="T" style="top:260px;font-size:124px">Tudo numa<br><span class="mark">tela só.</span></div>');B.appendChild(bT);
+ const app=appMock();app.style.top='620px';B.appendChild(app);
+ const team=$('<div style="position:absolute;left:80px;top:1480px;display:flex;gap:16px"><span class="pill" style="font-size:30px;padding:16px 26px;background:#fff">Ana · 8 conversas</span><span class="pill" style="font-size:30px;padding:16px 26px;background:#fff">Bruno · 5</span></div>');B.appendChild(team);
+ const CT=cta();R.appendChild(CT);
+ const cap=$('<div style="position:absolute;left:60px;right:60px;top:1600px;text-align:center;font-weight:800;font-size:54px;line-height:1.15;color:#fff;text-shadow:0 4px 24px rgba(0,0,0,.35)"><span class="ct" style="background:rgba(14,42,39,.82);padding:14px 26px;border-radius:22px;-webkit-box-decoration-break:clone;box-decoration-break:clone"></span></div>');R.appendChild(cap);R.appendChild(FL);
+ S.render=t=>{
+  show(A,t<C5.com+.6);show(B,t>=C5.com&&t<C5.cta+.4);show(CT,t>=C5.cta);
+  const d=t<C5.c4?'3':'4';big.querySelector('.d1').textContent=d;
+  slam(big,t,0,1.6);lab.style.opacity=t<C5.c4?k(t,.15,.4):0;
+  if(t>=C5.c4){big.style.transform=`scale(${mix(1.5,1,k(t,C5.c4,C5.c4+.25,expo))})`;}
+  const lab2=t>=C5.c4&&t<C5.dir;
+  phones.forEach((p,i)=>{const t0=C5.c4+i*.18;const pp=k(t,t0,t0+.4,back);const rot=[-12,-4,6,14][i];const sh=shake(t,C5.ning+i*.15,12);
+   p.style.transform=`translateY(${(1-pp)*1200}px) rotate(${rot+sh*.3}deg) translateX(${sh}px)`;p.style.opacity=t<C5.dir?1:1-k(t,C5.dir,C5.dir+.3);
+   p.querySelector('.bd').textContent=Math.floor(k(t,t0,C5.dir)*[38,52,17,24][i])});
+  big.style.opacity=t<C5.dir?big.style.opacity:1-k(t,C5.dir,C5.dir+.2);
+  dms.forEach((n,i)=>{const t0=C5.dir+.15+i*.28;const p=k(t,t0,t0+.3,back);n.style.opacity=t<C5.ning?k(t,t0,t0+.12):1-k(t,C5.ning,C5.ning+.3);n.style.transform=`translateX(${(1-p)*(i%2?1:-1)*900}px) rotate(${i%2?1.5:-1.5}deg)`});
+  qs.forEach((e,i)=>{const t0=C5.ning+.1+i*.22;const p=k(t,t0,t0+.25,back);e.style.opacity=t<C5.emb?k(t,t0,t0+.1):1-k(t,C5.emb,C5.emb+.2);e.style.transform=`scale(${p}) rotate(${(i%2?12:-12)+Math.sin(t*6+i)*6}deg)`});
+  const pl=k(t,C5.emb,C5.emb+.35,back);leave.style.opacity=t<C5.emb?0:1-k(t,C5.emb+1.1,C5.emb+1.5);leave.style.transform=`scale(${pl}) translateX(${k(t,C5.emb+.8,C5.emb+1.5,io)*900}px)`;
+  const tb=k(t,C5.com,C5.com+.5,expo);B.style.transform=`translateY(${(1-tb)*1920}px)`;A.style.transform=`translateY(${-tb*500}px)`;
+  slam(bT,t,C5.tela,1.4);const pa=k(t,C5.com+.4,C5.com+1.0,out);app.style.opacity=pa;app.style.transform=`translateY(${(1-pa)*140}px)`;
+  [['.row1',C5.fila],['.row2',C5.fila+.2],['.row3',C5.fila+.4]].forEach(([s,t0])=>{const e=app.querySelector(s);if(e)e.style.background=t>t0&&t<t0+.5?'#EAF6F4':''});
+  const ptm=k(t,C5.fila,C5.fila+.35,back);team.style.opacity=k(t,C5.fila,C5.fila+.15);team.style.transform=`scale(${ptm})`;team.style.transformOrigin='0 50%';
+  [['.r1',C5.ia+.1],['.r2',C5.ia+.7],['.r3',C5.ia+1.5]].forEach(([s,t0])=>{const e=app.querySelector(s);const qq=k(t,t0,t0+.3,out);e.style.opacity=qq;e.style.transform=`translateY(${(1-qq)*20}px)`});
+  const tc=k(t,C5.cta,C5.cta+.4,expo);CT.style.transform=`translateY(${(1-tc)*1920}px)`;ctaRender(CT,t,C5.cta+.1);
+  flash(FL,t,C5.tela);
+  const c=CAP.find(x=>t>=x[0]&&t<x[1]);const ct=cap.querySelector('.ct');ct.textContent=c?c[2]:'';cap.style.opacity=c?1:0;cap.style.top=(t>=C5.com&&t<C5.cta)?'1610px':'1600px';
+  R.style.transform=`translate(${shake(t,C5.emb,12)+shake(t,C5.tela,10)}px,0)`};
+}
+
+if(V=='6'){ // narrado Andre: tem no 37
+ DUR=19;
+ const Q={tem:1.05,dez:2.52,resp:3.94,comp:6.21,com:8.11,todos:9.17,ia:12.70,cta:15.69};
+ const CAP=[[0,1.0,'Ela mandou…'],[1.05,2.45,'"Tem no 37?"'],[2.52,3.85,'às 10 da manhã.'],[3.94,6.1,'Você respondeu às 3 da tarde.'],[6.21,8.0,'Ela já comprou no concorrente.'],[8.11,12.6,'Com o Simplifly, WhatsApps e Instagram numa tela só'],[12.70,15.6,'e a IA responde na hora.'],[15.69,18.9,'Comenta SIMPLIFLY 👇']];
+ const A=$('<div class="L" style="background:linear-gradient(165deg,#FF9A66 0%,#FF783B 40%,#D9551F 100%)"></div>');R.appendChild(A);
+ const clock=$('<div class="clock" style="top:190px;font-size:170px">10:02</div>');A.appendChild(clock);
+ const ph=$(`<div class="phone" style="left:230px;top:470px;width:620px;height:1180px"><div class="scr"><div class="isl"></div><div class="sb"><span class="sbt">10:02</span><span>5G</span></div><div class="wah"><div class="av" style="width:70px;height:70px;background:#7B6CF6;font-size:28px">M</div><div><div class="nm">Mariana</div><div class="st">online</div></div></div><div class="chat" style="gap:22px"><div class="m mi c1" style="font-size:34px">Oi! Tem esse tênis no 37? 😍<span class="tm">10:02</span></div><div class="m mo c2" style="font-size:34px">Tem sim! Quer que eu separe?<span class="tm">15:14 ✓✓</span></div><div class="m mi c3" style="font-size:34px;background:#FFE3D6">Ahh, já comprei em outra loja 😕<span class="tm">15:20</span></div></div></div></div>`);A.appendChild(ph);
+ const stamp=$('<div class="sticker" style="left:140px;top:1380px;font-size:56px;padding:24px 40px;background:var(--td)">Venda perdida</div>');A.appendChild(stamp);
+ const B=$('<div class="L bgd grain"><div class="glow" style="width:1100px;height:1100px;left:-450px;top:-350px"></div></div>');R.appendChild(B);
+ B.appendChild($('<div class="kk" style="top:250px"><i></i>Com o Simplifly</div>'));
+ const bT=$('<div class="T" style="top:320px;font-size:112px">Responde<br><span class="mark">na hora.</span></div>');B.appendChild(bT);
+ const app=appMock();app.style.top='620px';B.appendChild(app);
+ const CT=cta();R.appendChild(CT);
+ const cap=$('<div style="position:absolute;left:60px;right:60px;top:1700px;text-align:center;font-weight:800;font-size:52px;line-height:1.15;color:#fff"><span class="ct" style="background:rgba(14,42,39,.85);padding:14px 26px;border-radius:22px;-webkit-box-decoration-break:clone;box-decoration-break:clone"></span></div>');R.appendChild(cap);R.appendChild(FL);
+ S.render=t=>{
+  show(A,t<Q.com+.6);show(B,t>=Q.com&&t<Q.cta+.4);show(CT,t>=Q.cta);
+  slam(clock,t,0,1.3);
+  const tt=t<Q.resp?'10:02':(t<Q.comp?'15:14':'15:20');clock.textContent=tt;ph.querySelector('.sbt').textContent=tt;
+  if(t>=Q.resp&&t<Q.resp+.3){clock.style.transform=`scale(${mix(1.4,1,k(t,Q.resp,Q.resp+.3,expo))})`}
+  const pp=k(t,.2,.7,back);ph.style.transform=`translateY(${(1-pp)*1400}px) rotate(${-3+shake(t,Q.comp,8)*.2}deg)`;
+  [['.c1',Q.tem],['.c2',Q.resp+.2],['.c3',Q.comp]].forEach(([s,t0])=>{const e=ph.querySelector(s);const q=k(t,t0,t0+.3,back);e.style.opacity=k(t,t0,t0+.12);e.style.transform=`scale(${mix(.7,1,q)})`;e.style.transformOrigin=s=='.c2'?'100% 0':'0 0'});
+  const ps=k(t,Q.comp+.5,Q.comp+.8,back);stamp.style.opacity=k(t,Q.comp+.5,Q.comp+.6);stamp.style.transform=`rotate(-6deg) scale(${mix(1.8,1,ps)})`;
+  const tb=k(t,Q.com,Q.com+.5,expo);B.style.transform=`translateX(${(1-tb)*1080}px)`;A.style.transform=`translateX(${-tb*500}px)`;
+  slam(bT,t,Q.todos,1.4);const pa=k(t,Q.com+.4,Q.com+1.0,out);app.style.opacity=pa;app.style.transform=`translateY(${(1-pa)*140}px)`;
+  [['.r1',Q.ia+.1],['.r2',Q.ia+.8],['.r3',Q.ia+1.6]].forEach(([s,t0])=>{const e=app.querySelector(s);const qq=k(t,t0,t0+.3,out);e.style.opacity=qq;e.style.transform=`translateY(${(1-qq)*20}px)`});
+  const tc=k(t,Q.cta,Q.cta+.4,expo);CT.style.transform=`translateY(${(1-tc)*1920}px)`;ctaRender(CT,t,Q.cta+.1);
+  flash(FL,t,Q.com);
+  const c=CAP.find(x=>t>=x[0]&&t<x[1]);cap.querySelector('.ct').textContent=c?c[2]:'';cap.style.opacity=c?1:0;
+  R.style.transform=`translate(${shake(t,Q.comp+.5,14)}px,0)`};
+}
+
 window.DUR=DUR;window.render=S.render;
 window.READY=document.fonts.ready.then(()=>Promise.all([...document.images].map(i=>i.complete?1:new Promise(r=>{i.onload=i.onerror=r}))));
 </script></body></html>
