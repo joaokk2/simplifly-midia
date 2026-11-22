@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<link rel="stylesheet" href="base.css">
+<style>
+.cv{width:1080px;height:1920px;position:relative;overflow:hidden}
+.safe{position:absolute;left:0;right:0;top:285px;height:1350px;display:flex;flex-direction:column;justify-content:center;padding:0 90px}
+.tag{display:inline-flex;align-self:flex-start;align-items:center;gap:14px;font-weight:800;font-size:30px;letter-spacing:.12em;text-transform:uppercase;padding:14px 24px;border-radius:99px;background:rgba(255,255,255,.16);color:#fff;margin-bottom:44px}
+.tag i{width:14px;height:14px;border-radius:50%;background:var(--c)}
+.ink .tag{background:rgba(0,121,111,.12);color:var(--t)}
+.big{font-family:'Inter Display';font-weight:900;letter-spacing:-.05em;line-height:.92;color:#fff}
+.ink .big{color:var(--ink)}
+.play{position:absolute;right:90px;bottom:360px;width:120px;height:120px;border-radius:50%;background:var(--c);display:flex;align-items:center;justify-content:center;box-shadow:0 20px 40px rgba(255,120,59,.4)}
+.lg{position:absolute;left:90px;bottom:375px;height:70px}
+.bgd{background:radial-gradient(120% 80% at 80% 5%,#0E8C80 0%,#00665E 35%,#033F3A 75%,#022C29 100%)}
+.bgl{background:var(--bg)}
+.coral{background:linear-gradient(160deg,#FF9A66 0%,#FF783B 45%,#D9551F 100%)}
+.purple{background:linear-gradient(180deg,#3A1F4A,#1A1030)}
+.coral .mark:before{background:var(--td)}
+</style></head><body>
+<!-- template: id, class, tag, html -->
+<script>
+const C=[
+ ['boost','coral','Verdade dura','Pare de<br>impulsionar<br><span class="mark">post.</span>',150],
+ ['falta','bgl ink','Pergunta séria','Sua atendente<br>faltou.<br><span class="co">E agora?</span>',130],
+ ['apps','purple','Faz sentido?','Uma<br>ferramenta<br>pra cada<br><span class="mark">coisa?</span>',140],
+ ['bf','bgd grain','Black Friday','400<br>mensagens.<br><span class="co">1 celular.</span>',150],
+ ['trial1','bgd grain','Sua loja hoje','3 números.<br>4 celulares.<br><span class="co">Zero<br>controle.</span>',130],
+ ['trial3b','bgl ink','Loja de calçados','"Tem<br>no 38?"',200],
+ ['andre2','bgl ink','Ouça com som 🔊','3 números de<br>WhatsApp?<br><span class="co">Tudo numa<br>tela só.</span>',118],
+ ['trial2','bgd grain','02:07','A IA respondeu<br>às <span class="mark">2h da<br>manhã.</span>',124],
+ ['andre1','coral','Ouça com som 🔊','"Tem no 37?"<br>às 10h.<br>Resposta<br>às <span class="mark">15h.</span>',130],
+ ['trial4b','purple','Quem vende em live','A live<br><span class="co">bombou.</span><br>E agora?',150]
+];
+const PLAY='<svg width="54" height="54" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>';
+for(const [id,cls,tag,html,fs] of C){
+ const ink=cls.includes('ink');
+ document.body.insertAdjacentHTML('beforeend',`<section class="cv ${cls}" id="${id}"><div class="glow" style="position:absolute;width:1000px;height:1000px;border-radius:50%;background:radial-gradient(circle,rgba(255,120,59,${ink?.18:.3}),transparent 62%);right:-420px;top:-200px"></div><div class="safe"><div class="tag"><i></i>${tag}</div><div class="big" style="font-size:${fs}px">${html}</div></div><img class="lg" src="${ink?'logo-dark.svg':'logo-white.svg'}"><div class="play">${PLAY}</div></section>`);
+}
+</script>
+</body></html>
