@@ -1,0 +1,75 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+:root{--p:#6B3BF5;--p2:#EFEAFE;--ink:#0B0B10}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#fff}
+body{font-family:'Inter Display','Inter',sans-serif;color:var(--ink)}
+.sec{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden}
+.bg{position:absolute;inset:-60px;background-size:cover;background-position:center;filter:blur(40px) brightness(.55)}
+.ph{position:absolute;overflow:hidden}.ph img{width:100%;height:100%;object-fit:cover;display:block;transform-origin:50% 50%}
+.h{position:absolute;font-weight:800;letter-spacing:-.045em;line-height:.95;transform-origin:50% 50%}
+.c{left:0;width:1080px;text-align:center}
+.tag{position:absolute;padding:12px 22px;border-radius:14px;font:700 26px Inter;letter-spacing:.14em;text-transform:uppercase}
+.logo b{color:var(--p)}
+</style></head><body>
+<div class="sec" id="cam">
+ <!-- A: antes -->
+ <div class="sec" id="A">
+  <div class="bg" style="background-image:url(../fotos/vestido_a.jpg)"></div>
+  <div class="ph" id="Aph" style="left:0;top:250px;width:1080px;height:1350px"><img id="Aimg" src="../fotos/vestido_a.jpg"></div>
+  <div class="tag" id="Atag" style="left:60px;top:290px;background:#fff">Antes · foto de celular</div>
+  <div class="h c" id="A1" style="top:1380px;font-size:130px;color:#fff;text-shadow:0 8px 40px rgba(0,0,0,.5)">FOTO DE<br>CELULAR</div>
+ </div>
+ <!-- B: depois -->
+ <div class="sec" id="B">
+  <div class="bg" style="background-image:url(../fotos/vestido_d.jpg)"></div>
+  <div class="ph" style="left:0;top:250px;width:1080px;height:1350px"><img id="Bimg" src="../fotos/vestido_d.jpg" style="object-position:50% 40%"></div>
+  <div style="position:absolute;left:0;top:1000px;width:1080px;height:600px;background:linear-gradient(to top,rgba(20,10,40,.8),rgba(20,10,40,0))"></div>
+  <div class="tag" id="Btag" style="left:60px;top:290px;background:var(--p);color:#fff">Depois · ensa.ia</div>
+  <div class="h c" id="B1" style="top:1300px;font-size:140px;color:#fff">VIROU</div>
+  <div class="h c" id="B2" style="top:1430px;font-size:170px;color:#C9B6FF">CAMPANHA.</div>
+ </div>
+ <!-- C: mesma peça split -->
+ <div class="sec" id="C" style="background:#fff">
+  <div class="ph" id="Ct" style="left:0;top:0;width:1080px;height:958px"><img src="../fotos/vestido_a.jpg" style="object-position:50% 40%"></div>
+  <div class="ph" id="Cb" style="left:0;top:962px;width:1080px;height:958px"><img src="../fotos/vestido_d.jpg" style="object-position:50% 35%"></div>
+  <div id="Cl" style="position:absolute;left:0;top:955px;height:10px;background:var(--p)"></div>
+  <div class="h c" id="C1" style="top:880px"><span style="background:var(--p);color:#fff;font-size:84px;padding:16px 44px 24px;border-radius:30px;display:inline-block">MESMA PEÇA.</span></div>
+ </div>
+ <!-- D: como funciona -->
+ <div class="sec" id="D" style="background:var(--p)">
+  <div class="h c" id="D0" style="top:420px;font-size:70px;color:rgba(255,255,255,.7)">Sem modelo. Sem estúdio.</div>
+  <div class="h c" id="D1" style="top:640px;font-size:120px;color:#fff">1 foto</div>
+  <div class="h c" id="D2" style="top:820px;font-size:120px;color:#fff">quem · onde · como</div>
+  <div class="h c" id="D3" style="top:1000px;font-size:150px;color:#fff">PRONTO.</div>
+ </div>
+ <!-- E: CTA -->
+ <div class="sec" id="E" style="background:var(--p2)">
+  <div class="ph" id="Eph" style="left:300px;top:250px;width:480px;height:640px;border-radius:30px;box-shadow:0 30px 70px -30px rgba(40,20,90,.5)"><img src="../fotos/vestido_d.jpg" style="object-position:50% 35%"></div>
+  <div class="h c logo" id="E0" style="top:960px;font-size:150px">ensa<b>.</b>ia</div>
+  <div class="h c" id="E1" style="top:1150px;font-size:70px">COMECE COM</div>
+  <div class="h c" id="E2" style="top:1230px;font-size:220px;color:var(--p)"><span style="font-size:.4em;vertical-align:.9em">R$</span>9,90</div>
+  <div class="h c" id="E3" style="top:1500px;font:700 46px Inter;letter-spacing:.06em">ensaiastudio.com</div>
+ </div>
+</div>
+<div id="fl" style="position:absolute;inset:0;background:#fff;opacity:0"></div>
+<script>
+const cl=(x,a=0,b=1)=>Math.min(b,Math.max(a,x)),ex=t=>t>=1?1:1-Math.pow(2,-10*t),io=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+const k=(t,a,b,e=ex)=>e(cl((t-a)/(b-a))),mix=(a,b,p)=>a+(b-a)*p,$=i=>document.getElementById(i);
+const T={B:1.15,C:4.0,D:6.6,d1:7.0,d2:7.6,d3:8.3,E:9.8,DUR:13.5};
+function show(id,v){$(id).style.display=v?'':'none'}
+function slam(id,t,t0,f=1.5,d=.16){const p=k(t,t0,t0+d);const e=$(id);e.style.opacity=t>=t0?Math.min(1,p*2.2):0;e.style.transform=`scale(${mix(f,1,p)})`}
+function render(t){
+  let sh=0;[[0,.5],[T.B,1.2],[T.C,.6],[T.d3,.7],[T.E+.6,.8]].forEach(([a,s])=>{const d=t-a;if(d>=0&&d<.5)sh+=s*Math.exp(-d/.09)*24*Math.sin(d*90)});
+  $('cam').style.transform=`translate(${sh}px,${sh*.6}px)`;
+  let f=0;[[T.B,1],[T.C,.4],[T.d3,.5],[T.E+.6,.5]].forEach(([a,s])=>{const d=t-a;if(d>=0&&d<.25)f=Math.max(f,s*Math.exp(-d/.055))});$('fl').style.opacity=f;
+  show('A',t<T.B);show('B',t>=T.B&&t<T.C);show('C',t>=T.C&&t<T.D);show('D',t>=T.D&&t<T.E);show('E',t>=T.E);
+  if(t<T.B){$('Aimg').style.transform=`scale(${1+.08*k(t,0,T.B,x=>x)})`;slam('A1',t,0,1.15,.15);}
+  if(t>=T.B&&t<T.C){$('Bimg').style.transform=`scale(${mix(1.3,1,k(t,T.B,T.B+.6))*mix(1,1.05,k(t,T.B+.6,T.C,x=>x))})`;slam('B1',t,T.B+.1,1.3,.14);slam('B2',t,T.B+.4,1.5,.16);}
+  if(t>=T.C&&t<T.D){const p=k(t,T.C,T.C+.3);$('Ct').style.transform=`translateY(${-(1-p)*960}px)`;$('Cb').style.transform=`translateY(${(1-p)*960}px)`;
+    const l=k(t,T.C+.2,T.C+.5,io);$('Cl').style.left=(540*(1-l))+'px';$('Cl').style.width=(1080*l)+'px';slam('C1',t,T.C+.45,1.6,.18);}
+  if(t>=T.D&&t<T.E){slam('D0',t,T.D,1.1,.15);slam('D1',t,T.d1,1.4,.15);slam('D2',t,T.d2,1.4,.15);slam('D3',t,T.d3,1.7,.18);}
+  if(t>=T.E){const p=k(t,T.E,T.E+.4);$('Eph').style.transform=`scale(${mix(.8,1,p)})`;$('Eph').style.opacity=p;slam('E0',t,T.E+.15,1.3,.16);slam('E1',t,T.E+.45,1.2,.14);slam('E2',t,T.E+.6,1.8,.2);slam('E3',t,T.E+.9,1.1,.15);
+    $('E3').style.transform+=` scale(${1+.03*Math.max(0,Math.sin((t-T.E-1.2)*6))*(t>T.E+1.2?1:0)})`;}
+}
+window.T=T;window.render=render;window.READY=Promise.all([...document.images].map(i=>i.decode().catch(()=>{}))).then(()=>{render(0);return true});
+</script></body></html>
