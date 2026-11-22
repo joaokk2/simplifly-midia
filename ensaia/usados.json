@@ -5,31 +5,16 @@
    "par": "vestido",
    "data": "2026-11-22",
    "post": "Reel 22/11 ~17h40 (reel_vestido.mp4)"
-  },
-  {
-   "par": "camisa",
-   "data": "2026-11-22",
-   "post": "Carrossel 22/11 18h"
-  },
-  {
-   "par": "bolsa",
-   "data": "2026-11-22",
-   "post": "Carrossel 22/11 18h"
-  },
-  {
-   "par": "oculos",
-   "data": "2026-11-22",
-   "post": "Story enquete 22/11 18h30"
-  },
-  {
-   "par": "fitness",
-   "data": "2026-11-22",
-   "post": "Estático 22/11 19h"
-  },
-  {
-   "par": "biquini",
-   "data": "2026-11-22",
-   "post": "Story 22/11 20h30"
   }
- ]
+ ],
+ "prontos_nao_publicados": {
+  "pasta": "ensaia/2026-11-22-lote",
+  "pecas": [
+   "carrossel camisa+bolsa (1800_carrossel_1..5)",
+   "story enquete oculos (1830_story_enquete)",
+   "estatico fitness (1900_estatico)",
+   "story biquini (2030_story)"
+  ],
+  "obs": "Pausado a pedido do João em 22/11; pode publicar esse lote quando ele liberar."
+ }
 }
