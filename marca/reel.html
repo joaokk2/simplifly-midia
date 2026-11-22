@@ -23,6 +23,7 @@ html,body{margin:0;background:#000}
 </style></head><body>
 <div id="v"></div>
 <script src="cfgs.js"></script>
+<script src="ncfgs.js"></script>
 <script>
 const V=new URLSearchParams(location.search).get('v')||'1';
 const $=(h)=>{const d=document.createElement('div');d.innerHTML=h.trim();return d.firstChild};
@@ -258,6 +259,43 @@ if(V=='g'){ // generic config-driven reel
   [['.r1',t1+1.4],['.r2',t1+1.9],['.r3',t1+2.5]].forEach(([s,t0])=>{const e=app.querySelector(s);const q=k(t,t0,t0+.3,out);e.style.opacity=q;e.style.transform=`translateY(${(1-q)*20}px)`});
   const tc=k(t,tc0,tc0+.4,expo);CT.style.transform=`translateY(${(1-tc)*1920}px)`;ctaRender(CT,t,tc0+.2);flash(FL,t,t1);
   R.style.transform=`translate(${shake(t,G.shakeT||3.8,12)}px,0)`};
+}
+
+if(V=='n'){ // narrado configurável
+ const P=new URLSearchParams(location.search).get('c');const G=window.NCFGS[P];DUR=G.dur;
+ const BGS={cream:'background:var(--bg)',coral:'background:linear-gradient(165deg,#FF9A66 0%,#FF783B 40%,#D9551F 100%)',teal:'background:radial-gradient(120% 80% at 80% 5%,#0E8C80 0%,#00665E 35%,#033F3A 75%,#022C29 100%)'};
+ const A=$(`<div class="L" style="${BGS[G.bgA]}"></div>`);R.appendChild(A);
+ const dk=G.bgA!='cream';
+ const clock=$(`<div class="clock" style="top:180px;font-size:150px;color:${dk?'#fff':'var(--ink)'}"></div>`);A.appendChild(clock);
+ const sub=$(`<div class="clock" style="top:350px;font-size:38px;font-weight:700;letter-spacing:0;color:${dk?'#FFE3D6':'var(--mut)'}"></div>`);A.appendChild(sub);
+ const ph=$(`<div class="phone" style="left:230px;top:450px;width:620px;height:1180px"><div class="scr"><div class="isl"></div><div class="sb"><span class="sbt"></span><span>5G</span></div><div class="wah"><div class="av" style="width:70px;height:70px;background:${G.avc};font-size:28px">${G.who[0]}</div><div><div class="nm">${G.who}</div><div class="st">${G.whoSub}</div></div></div><div class="chat" style="gap:22px"></div></div></div>`);A.appendChild(ph);
+ const chat=ph.querySelector('.chat');
+ const msgs=G.msgs.map(m=>{const e=$(`<div class="m ${m.out?'mo':'mi'}" style="font-size:33px;${m.lost?'background:#FFE3D6':''}">${m.t}<span class="tm">${m.h}</span></div>`);chat.appendChild(e);return [e,m]});
+ const stamp=$(`<div class="sticker" style="left:130px;top:1400px;font-size:54px;padding:24px 40px;background:var(--td)">${G.stamp}</div>`);A.appendChild(stamp);
+ const B=$(`<div class="L" style="${BGS.teal}"><div class="glow" style="width:1100px;height:1100px;left:-450px;top:-350px"></div></div>`);R.appendChild(B);
+ B.appendChild($('<div class="kk" style="top:250px"><i></i>Com o Simplifly</div>'));
+ const bT=$(`<div class="T" style="top:320px;font-size:112px">${G.reveal}</div>`);B.appendChild(bT);
+ const app=appMock();app.style.top='640px';B.appendChild(app);
+ app.querySelector('.conv .hd b').textContent=G.appWho;app.querySelector('.conv .hd span').textContent=G.appCh;
+ app.querySelector('.ci').textContent=G.appIn;app.querySelector('.r1').textContent=G.appOut;app.querySelector('.r3').textContent=G.appIn2;
+ const rows=app.querySelectorAll('.it');G.rows.forEach((r,i)=>{if(rows[i]){rows[i].querySelector('b').firstChild.textContent=r[0]+' ';rows[i].querySelector('p').textContent=r[1];rows[i].querySelector('.av').textContent=r[0][0]}});
+ const chips=$(`<div style="position:absolute;left:80px;right:80px;top:1500px;display:flex;gap:16px;flex-wrap:wrap">${G.chips.map(c=>`<span class="pill" style="font-size:32px;padding:18px 28px;background:#fff">${c}</span>`).join('')}</div>`);B.appendChild(chips);
+ const CT=cta();R.appendChild(CT);
+ const cap=$('<div style="position:absolute;left:60px;right:60px;top:1700px;text-align:center;font-weight:800;font-size:50px;line-height:1.15;color:#fff"><span class="ct" style="background:rgba(14,42,39,.86);padding:14px 26px;border-radius:22px;-webkit-box-decoration-break:clone;box-decoration-break:clone"></span></div>');R.appendChild(cap);R.appendChild(FL);
+ const Q=G.q;
+ S.render=t=>{show(A,t<Q.rev+.6);show(B,t>=Q.rev&&t<Q.cta+.4);show(CT,t>=Q.cta);
+  const ck=G.clocks.filter(c=>t>=c[0]).pop();clock.textContent=ck[1];sub.textContent=ck[2]||'';ph.querySelector('.sbt').textContent=ck[1];
+  const lastC=G.clocks.filter(c=>t>=c[0]).pop()[0];clock.style.transform=`scale(${mix(1.35,1,k(t,lastC,lastC+.3,expo))})`;clock.style.opacity=t<.05?0:1;
+  const pp=k(t,.1,.6,back);ph.style.transform=`translateY(${(1-pp)*1400}px) rotate(${-3+shake(t,Q.lost,8)*.2}deg)`;
+  msgs.forEach(([e,m])=>{const q=k(t,m.at,m.at+.3,back);e.style.opacity=k(t,m.at,m.at+.12);e.style.transform=`scale(${mix(.7,1,q)})`;e.style.transformOrigin=m.out?'100% 0':'0 0'});
+  const ps=k(t,Q.stamp,Q.stamp+.3,back);stamp.style.opacity=k(t,Q.stamp,Q.stamp+.1);stamp.style.transform=`rotate(-6deg) scale(${mix(1.8,1,ps)})`;
+  const tb=k(t,Q.rev,Q.rev+.5,expo);B.style.transform=G.trans=='x'?`translateX(${(1-tb)*1080}px)`:`translateY(${(1-tb)*1920}px)`;A.style.transform=G.trans=='x'?`translateX(${-tb*500}px)`:`translateY(${-tb*600}px)`;
+  slam(bT,t,Q.rev+.3,1.4);const pa=k(t,Q.rev+.5,Q.rev+1.1,out);app.style.opacity=pa;app.style.transform=`translateY(${(1-pa)*140}px)`;
+  [['.r1',Q.ai],['.r2',Q.ai+.6],['.r3',Q.ai2]].forEach(([s,t0])=>{const e=app.querySelector(s);const qq=k(t,t0,t0+.3,out);e.style.opacity=qq;e.style.transform=`translateY(${(1-qq)*20}px)`});
+  const pc=k(t,Q.chips,Q.chips+.35,back);chips.style.opacity=k(t,Q.chips,Q.chips+.1);chips.style.transform=`scale(${pc})`;chips.style.transformOrigin='0 50%';
+  const tc=k(t,Q.cta,Q.cta+.4,expo);CT.style.transform=`translateY(${(1-tc)*1920}px)`;ctaRender(CT,t,Q.cta+.1);flash(FL,t,Q.rev);
+  const c=G.cap.find(x=>t>=x[0]&&t<x[1]);cap.querySelector('.ct').textContent=c?c[2]:'';cap.style.opacity=c?1:0;
+  R.style.transform=`translate(${shake(t,Q.stamp,14)}px,0)`};
 }
 
 window.DUR=DUR;window.render=S.render;

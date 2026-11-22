@@ -1,0 +1,20 @@
+window.NCFGS={
+ clinica:{dur:18.9,bgA:'cream',trans:'y',who:'Paciente',whoSub:'online',avc:'#7B6CF6',
+  clocks:[[0,'21:00','sexta-feira'],[2.39,'21:02','sexta-feira'],[5.30,'21:40','ninguém respondeu'],[6.67,'09:15','sábado']],
+  msgs:[{at:2.6,t:'Oi! Tem horário pra limpeza de pele amanhã?',h:'21:02'},{at:3.6,t:'Pode ser qualquer horário 🙏',h:'21:03'},{at:6.9,t:'Já marquei em outra clínica, obrigada!',h:'09:15',lost:1}],
+  stamp:'Paciente perdida',reveal:'Responde<br><span class="mark">na hora.</span>',
+  appWho:'Paciente',appCh:'WhatsApp · Recepção',appIn:'Oi! Tem horário pra limpeza de pele amanhã?',appOut:'Tem sim! Temos sábado às 9h, 10h30 ou 14h. Qual prefere?',appIn2:'10h30! 🙌',
+  rows:[['Paciente','Tem horário amanhã?'],['@bia.estetica','Qual o valor?'],['Rafael','Posso remarcar?'],['Juliana','Vocês aceitam cartão?'],['@lu.beauty','Tem vaga hoje?']],
+  chips:['Sáb 9h','Sáb 10h30 ✓','Sáb 14h','Recepção confirma ✓'],
+  q:{lost:6.67,stamp:7.3,rev:8.60,ai:9.6,ai2:13.6,chips:12.11,cta:15.64},
+  cap:[[0,2.0,'Sexta-feira, 21h.'],[2.39,5.0,'Uma paciente pergunta se tem horário pra amanhã.'],[5.30,6.5,'Ninguém responde…'],[6.67,8.4,'e ela marca em outra clínica.'],[8.60,12.0,'Com o Simplifly, a IA responde na hora,'],[12.11,13.5,'mostra os horários livres…'],[13.59,15.5,'e sua recepção só confirma.'],[15.64,18.8,'Comenta SIMPLIFLY 👇']]},
+ orcamento:{dur:20.4,bgA:'coral',trans:'x',who:'Cliente',whoSub:'online',avc:'#2F9E8F',
+  clocks:[[0,'08:00','manhã'],[2.53,'17:00','fim da tarde'],[4.53,'17:06','']],
+  msgs:[{at:0.5,t:'Bom dia! Consegue me passar um orçamento hoje?',h:'08:00'},{at:2.8,t:'Segue o orçamento! 📄',h:'17:00',out:1},{at:4.7,t:'Ah, já fechei com outro. Valeu!',h:'17:06',lost:1}],
+  stamp:'Cliente perdido',reveal:'Tudo numa<br><span class="mark">tela só.</span>',
+  appWho:'Cliente',appCh:'WhatsApp · Orçamentos',appIn:'Bom dia! Consegue me passar um orçamento hoje?',appOut:'Bom dia! Já te mando agora. Me diz só o modelo e o ano do carro?',appIn2:'Gol 2019 🙌',
+  rows:[['Cliente','Orçamento hoje?'],['@auto.center','Qual o prazo?'],['Marcos','Faz alinhamento?'],['Débora','Tem horário amanhã?'],['@carlos.mec','Aceita pix?']],
+  chips:['Ana · 6 conversas','Bruno · 4','Nenhum cliente esperando ✓'],
+  q:{lost:4.53,stamp:6.3,rev:9.56,ai:11.0,ai2:13.5,chips:14.23,cta:17.36},
+  cap:[[0,2.3,'Ele pediu um orçamento às 8h.'],[2.53,4.4,'Você mandou às 17h.'],[4.53,6.1,'Ele já tinha fechado com outro.'],[6.28,9.3,'Orçamento que demora é cliente perdido.'],[9.56,14.0,'Com o Simplifly, WhatsApps e Instagram numa tela só'],[14.23,17.2,'e sua equipe responde rápido.'],[17.36,20.3,'Comenta SIMPLIFLY 👇']]}
+};
