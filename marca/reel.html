@@ -263,7 +263,7 @@ if(V=='g'){ // generic config-driven reel
 
 if(V=='n'){ // narrado configurável
  const P=new URLSearchParams(location.search).get('c');const G=window.NCFGS[P];DUR=G.dur;
- const BGS={cream:'background:var(--bg)',coral:'background:linear-gradient(165deg,#FF9A66 0%,#FF783B 40%,#D9551F 100%)',teal:'background:radial-gradient(120% 80% at 80% 5%,#0E8C80 0%,#00665E 35%,#033F3A 75%,#022C29 100%)'};
+ const BGS={cream:'background:var(--bg)',coral:'background:linear-gradient(165deg,#FF9A66 0%,#FF783B 40%,#D9551F 100%)',teal:'background:radial-gradient(120% 80% at 80% 5%,#0E8C80 0%,#00665E 35%,#033F3A 75%,#022C29 100%)',purple:'background:linear-gradient(180deg,#3A1F4A,#1A1030)'};
  const A=$(`<div class="L" style="${BGS[G.bgA]}"></div>`);R.appendChild(A);
  const dk=G.bgA!='cream';
  const clock=$(`<div class="clock" style="top:180px;font-size:150px;color:${dk?'#fff':'var(--ink)'}"></div>`);A.appendChild(clock);
