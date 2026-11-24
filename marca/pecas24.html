@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<link rel="stylesheet" href="base.css">
+<style>
+body{background:#999}
+section{position:relative;overflow:hidden;color:var(--ink);margin:0 0 20px}
+.s{width:1080px;height:1350px}.st{width:1080px;height:1920px}
+.tealb{background:radial-gradient(120% 85% at 80% 0%,#2CC2B1 0%,#00A393 35%,#00796F 80%,#006B62 100%);color:#fff}
+.coral{background:linear-gradient(160deg,#FF9A66 0%,#FF783B 45%,#E0632A 100%);color:#fff}
+.sun{background:linear-gradient(165deg,#FFD66B 0%,#FFB443 45%,#FF8A3D 100%)}
+.cream{background:var(--bg)}.mint{background:linear-gradient(170deg,#E6F7F3,#CBEFE7)}.sand{background:linear-gradient(170deg,#FBF3E4,#F3E3C6)}
+.lilac{background:linear-gradient(170deg,#F1EDFF,#E2DAFF)}.sky{background:linear-gradient(170deg,#E3F1FF,#C9E3FF)}
+.coral .mark:before,.tealb .mark:before{background:var(--c)}
+.coral .mark:before{background:#B8441A}
+.H{font-family:'Inter Display';font-weight:900;letter-spacing:-.045em;line-height:.95}
+.num{font-family:'Inter Display';font-weight:900;font-size:200px;letter-spacing:-.06em;line-height:.8;color:var(--c);opacity:.9}
+.kick{color:var(--t)}.tealb .kick,.coral .kick{color:#fff}
+.tealb .kick i{background:#FFB08A}.coral .kick i{background:#fff}
+.sub{font-size:40px;font-weight:600;line-height:1.3;color:var(--mut)}
+.tealb .sub,.coral .sub{color:rgba(255,255,255,.88)}
+.bub{position:relative;max-width:760px;padding:24px 30px 16px;border-radius:30px;font-size:38px;line-height:1.25;background:#fff;box-shadow:0 18px 40px rgba(14,42,39,.12);margin-bottom:22px}
+.bub .tm{display:block;text-align:right;font-size:24px;color:#8a978f;margin-top:4px}
+.bub.o{background:#D9FDD3;margin-left:auto}.bub.l{background:#FFE3D6}
+.card{background:#fff;border-radius:34px;padding:30px 36px;box-shadow:0 18px 50px rgba(14,42,39,.1);display:flex;gap:26px;align-items:center;margin-bottom:24px}
+.card .ic{width:84px;height:84px;border-radius:24px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:38px;flex:none}
+.card b{display:block;font-size:38px;letter-spacing:-.01em}.card span{font-size:28px;color:var(--mut)}
+.chk{width:110px;height:110px;border-radius:32px;background:var(--t);display:flex;align-items:center;justify-content:center;margin-bottom:50px}
+.coral .chk{background:#fff}
+.ring{position:absolute;border-radius:50%;border:6px solid rgba(0,121,111,.12)}
+.tealb .ring,.coral .ring{border-color:rgba(255,255,255,.16)}
+.stripes:after{content:"";position:absolute;inset:-300px;background:repeating-linear-gradient(-35deg,rgba(255,120,59,.09) 0 40px,transparent 40px 120px);pointer-events:none;z-index:0}
+.coral.stripes:after{background:repeating-linear-gradient(-35deg,rgba(255,255,255,.08) 0 40px,transparent 40px 120px)}
+.dots:after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(0,121,111,.15) 5px,transparent 6px);background-size:60px 60px;-webkit-mask-image:linear-gradient(180deg,#000,transparent 50%);pointer-events:none}
+.z{z-index:1}
+.url{display:inline-flex;align-items:center;gap:16px;background:#fff;color:var(--ink);font-weight:800;font-size:44px;padding:26px 38px;border-radius:26px;box-shadow:0 24px 50px rgba(0,0,0,.18)}
+.url i{width:20px;height:20px;border-radius:50%;background:var(--c)}
+.opt{background:#fff;border-radius:28px;padding:34px 40px;font-size:46px;font-weight:800;display:flex;justify-content:space-between;margin-bottom:26px;box-shadow:0 14px 34px rgba(14,42,39,.12);color:var(--ink)}
+.opt em{font-style:normal;color:var(--mut);font-weight:600}
+/* capa */
+.safe{position:absolute;left:0;right:0;top:285px;height:1350px;display:flex;flex-direction:column;justify-content:center;padding:0 90px}
+.tag{display:inline-flex;align-self:flex-start;align-items:center;gap:14px;font-weight:800;font-size:30px;letter-spacing:.12em;text-transform:uppercase;padding:14px 24px;border-radius:99px;background:rgba(255,255,255,.2);color:#fff;margin-bottom:44px}
+.tag i{width:14px;height:14px;border-radius:50%;background:#fff}
+.lt .tag{background:rgba(0,121,111,.12);color:var(--t)}.lt .tag i{background:var(--c)}
+.big{font-family:'Inter Display';font-weight:900;letter-spacing:-.05em;line-height:.92;color:#fff}
+.lt .big{color:var(--ink)}
+.play{position:absolute;right:90px;bottom:360px;width:120px;height:120px;border-radius:50%;background:var(--c);display:flex;align-items:center;justify-content:center;box-shadow:0 20px 40px rgba(255,120,59,.4)}
+.coral .play{background:#fff}
+.lg{position:absolute;left:90px;bottom:375px;height:70px}
+</style></head><body>
+<script>
+const LW='logo-white.svg',LD='logo-dark.svg';
+const dark=c=>/tealb|coral/.test(c);
+const brand=(c,i,n)=>`<div class="brand z"><img src="${dark(c)?LW:LD}"></div>`+(n?`<div class="pager z">${Array.from({length:n},(_,k)=>`<b class="${k==i?'on':''}"></b>`).join('')}</div>`:'');
+const rings=`<div class="ring" style="width:900px;height:900px;right:-380px;top:-330px"></div><div class="ring" style="width:1300px;height:1300px;right:-580px;top:-530px"></div>`;
+const S=[];
+function add(id,cls,html,i,n){S.push(id);document.body.insertAdjacentHTML('beforeend',`<section id="${id}" class="s ${cls}">${html}${brand(cls,i,n)}</section>`)}
+function addSt(id,cls,html){S.push(id);document.body.insertAdjacentHTML('beforeend',`<section id="${id}" class="st ${cls}">${html}<img class="z" src="${dark(cls)?LW:LD}" style="position:absolute;left:90px;bottom:250px;height:62px"></section>`)}
+const PLAY='<svg width="54" height="54" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>';
+const PLAYC='<svg width="54" height="54" viewBox="0 0 24 24" fill="#FF783B"><path d="M8 5v14l11-7z"/></svg>';
+function capa(id,cls,deco,tag,html,fs){const lt=!dark(cls);S.push(id);document.body.insertAdjacentHTML('beforeend',`<section id="${id}" class="st ${cls} ${deco} ${lt?'lt':''}">${deco=='rings'?rings:''}<div class="safe z"><div class="tag"><i></i>${tag}</div><div class="big" style="font-size:${fs}px">${html}</div></div><img class="lg z" src="${lt?LD:LW}"><div class="play z">${cls.includes('coral')?PLAYC:PLAY}</div></section>`)}
+
+/* ===== CARROSSEL A: o cliente não sumiu ===== */
+const NA=7;
+add('a1','tealb',`${rings}<div class="pad z" style="top:150px"><div class="kick"><i></i>Clínica, oficina, imobiliária</div></div>
+<div class="pad H z" style="top:270px;font-size:142px">O cliente<br>não sumiu.<br><span class="mark">Foi atendido</span><br><span class="mark">por outro.</span></div>
+<div class="pad sub z" style="top:1000px">4 momentos em que isso acontece →</div>`,0,NA);
+add('a2','cream stripes',`<div class="pad z" style="top:130px"><div class="num">01</div><div class="H" style="font-size:96px;margin-top:30px">O orçamento chegou<br><span class="co">no fim do dia.</span></div></div>
+<div class="pad z" style="top:640px"><div class="bub">Bom dia! Consegue o orçamento da revisão hoje?<span class="tm">08:02</span></div><div class="bub o">Segue o orçamento! 📄<span class="tm">17:30</span></div><div class="bub l">Ah, já fechei com outra oficina. Valeu!<span class="tm">17:34</span></div></div>`,1,NA);
+add('a3','mint dots',`<div class="pad z" style="top:130px"><div class="num">02</div><div class="H" style="font-size:96px;margin-top:30px">Ninguém confirmou<br><span class="co">o horário.</span></div></div>
+<div class="pad z" style="top:640px"><div class="bub">Oi! Minha consulta é amanhã, né? Que horas?<span class="tm">21:14</span></div><div class="bub l" style="max-width:420px">…<span class="tm">sem resposta</span></div>
+<div class="H" style="font-size:64px;margin-top:40px">Amanhã: horário vago<br>na agenda.</div></div>`,2,NA);
+add('a4','sand',`<div class="pad z" style="top:130px"><div class="num">03</div><div class="H" style="font-size:96px;margin-top:30px">A pergunta caiu<br><span class="co">no Direct.</span></div></div>
+<div class="pad z" style="top:640px"><div class="card"><div class="ic ig" style="background:linear-gradient(135deg,#FEDA75,#FA7E1E 30%,#D62976 60%,#962FBF 85%,#4F5BD5)">IG</div><div><b>@mari.casanova</b><span>O apê da Vila ainda está disponível?</span></div></div>
+<div class="card" style="opacity:.75"><div class="ic" style="background:#9AA8A5">👀</div><div><b>Visto 2 dias depois</b><span>e a visita foi marcada com outro corretor</span></div></div></div>`,3,NA);
+add('a5','lilac',`<div class="pad z" style="top:130px"><div class="num">04</div><div class="H" style="font-size:96px;margin-top:30px">Cada atendente<br><span class="co">num celular.</span></div></div>
+<div class="pad z" style="top:640px"><div class="card"><div class="ic wa">A</div><div><b>Celular da Ana</b><span>12 conversas sem resposta</span></div></div><div class="card"><div class="ic" style="background:#7B6CF6">B</div><div><b>Celular do Bruno</b><span>de folga hoje</span></div></div><div class="card"><div class="ic" style="background:#E2B23A">E</div><div><b>Número da empresa</b><span>quem está olhando?</span></div></div></div>`,4,NA);
+add('a6','coral stripes',`<div class="pad H z" style="top:300px;font-size:150px">Não falta<br>cliente.<br><span style="color:#FFF1C9">Falta<br>resposta.</span></div>`,5,NA);
+add('a7','tealb',`${rings}<div class="pad z" style="top:150px"><div class="kick"><i></i>Com o Simplifly</div></div>
+<div class="pad H z" style="top:250px;font-size:92px">Todos os WhatsApps<br>e o Instagram<br><span class="mark">numa tela só.</span></div>
+<div class="pad z" style="top:680px;font-size:40px;font-weight:700;line-height:1.6">✓ Equipe dividindo a fila<br>✓ IA respondendo na hora<br>✓ Cada cliente no CRM</div>
+<div class="pad z" style="top:930px"><div class="url"><i></i>simpliflyone.com</div></div>
+<div class="pad z" style="top:1075px;font-size:34px;font-weight:600;color:#DFF5F1">Comenta <b style="background:rgba(255,255,255,.18);padding:2px 12px;border-radius:10px;color:#fff">SIMPLIFLY</b> que eu te mando como funciona.</div>`,6,NA);
+
+/* ===== CARROSSEL B: Black Friday checklist ===== */
+const NB=7;const CK='<svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+add('b1','coral stripes',`<div class="pad z" style="top:150px"><div class="kick"><i></i>Checklist rápido</div></div>
+<div class="pad H z" style="top:270px;font-size:132px">Black Friday<br>é sexta.<br><span style="color:#FFF1C9">Seu WhatsApp<br>aguenta?</span></div>
+<div class="pad sub z" style="top:1020px">Loja, delivery, salão: confere antes →</div>`,0,NB);
+const items=[['sky','Respostas prontas pras<br>perguntas de sempre','Preço, prazo, horário, frete, forma de pagamento. Escreve uma vez, usa o dia todo.'],
+['mint','Todos os números<br>num lugar só','Se cada WhatsApp está num celular, alguém vai ficar sem resposta.'],
+['sand','A equipe dividindo<br>a fila','Cada conversa com um dono. Ninguém responde o mesmo cliente duas vezes.'],
+['lilac','O Direct também<br>vende','Quem chama no Instagram quer comprar igual. Não deixa pra olhar depois.'],
+['cream','Volta em quem<br>não fechou','Quem perguntou e sumiu ainda está decidindo. Uma mensagem no dia seguinte reabre a conversa.']];
+items.forEach(([c,h,p],i)=>add('b'+(i+2),c+(i%2?' dots':''),`<div class="pad z" style="top:330px"><div class="chk">${CK}</div><div class="kick" style="margin-bottom:30px"><i></i>Item ${i+1} de 5</div><div class="H" style="font-size:90px">${h}</div><div class="sub" style="margin-top:50px;max-width:860px">${p}</div></div>`,i+1,NB));
+// last slide of B is CTA (replace b6/b7 numbering: b2..b6 items, b7 CTA)
+add('b7','tealb',`${rings}<div class="pad z" style="top:150px"><div class="kick"><i></i>Tudo isso numa tela só</div></div>
+<div class="pad H z" style="top:270px;font-size:120px">Simplifly:<br>atendimento<br><span class="mark">que vende.</span></div>
+<div class="pad z" style="top:760px;font-size:40px;font-weight:700;line-height:1.6">Vários WhatsApps + Instagram,<br>equipe, IA, CRM e disparos.</div>
+<div class="pad z" style="top:900px"><div class="url"><i></i>simpliflyone.com</div></div>
+<div class="pad z" style="top:1040px;font-size:34px;font-weight:600;color:#DFF5F1">Comenta <b style="background:rgba(255,255,255,.18);padding:2px 12px;border-radius:10px;color:#fff">SIMPLIFLY</b> que eu te mando como funciona.</div>`,6,NB);
+
+/* ===== ESTÁTICO ===== */
+add('c1','sand stripes',`<div class="pad z" style="top:150px"><div class="kick"><i></i>Recado pra quem tem vários números</div></div>
+<div class="pad H z" style="top:270px;font-size:118px">Seu cliente não<br>quer saber qual<br>é o <span class="co">número<br>certo.</span></div>
+<div class="pad z" style="top:850px;display:flex;gap:18px;flex-wrap:wrap"><span class="pill" style="font-size:34px;padding:18px 28px;background:#fff"><i style="background:#25D366;width:16px;height:16px"></i>Recepção</span><span class="pill" style="font-size:34px;padding:18px 28px;background:#fff"><i style="background:#25D366;width:16px;height:16px"></i>Vendas</span><span class="pill" style="font-size:34px;padding:18px 28px;background:#fff"><i style="background:#25D366;width:16px;height:16px"></i>Financeiro</span><span class="pill" style="font-size:34px;padding:18px 28px;background:#fff"><i style="background:#D62976;width:16px;height:16px"></i>Instagram</span></div>
+<div class="pad H z" style="top:1110px;font-size:58px;color:var(--t)">Ele só quer resposta.</div>`,0,0);
+
+/* ===== STORIES ===== */
+addSt('k1','tealb',`${rings}<div class="pad z" style="top:330px"><div class="kick"><i></i>Enquete rápida</div></div>
+<div class="pad H z" style="top:420px;font-size:112px">Quantos números<br>de WhatsApp sua<br>empresa usa?</div>
+<div class="pad z" style="top:900px"><div class="opt">Só 1 <em>📱</em></div><div class="opt">2 ou 3 <em>📱📱</em></div><div class="opt">4 ou mais <em>🤯</em></div></div>
+<div class="pad z" style="top:1370px;font-size:40px;font-weight:700">Responde no Direct 👇</div>`);
+addSt('k2','mint dots',`<div class="pad z" style="top:300px"><div class="kick"><i></i>Funciona assim</div></div>
+<div class="pad H z" style="top:390px;font-size:108px">Direct e WhatsApp<br><span class="co">na mesma caixa.</span></div>
+<div class="pad z" style="top:780px"><div class="card"><div class="ic wa">W</div><div><b>Juliana · WhatsApp</b><span>Tem horário sábado?</span></div></div><div class="card"><div class="ic" style="background:linear-gradient(135deg,#FEDA75,#FA7E1E 30%,#D62976 60%,#962FBF 85%,#4F5BD5)">IG</div><div><b>@pedro.f · Direct</b><span>Quanto custa o pacote?</span></div></div><div class="card"><div class="ic wa">W</div><div><b>Marcos · WhatsApp 2</b><span>Chegou meu pedido?</span></div></div></div>
+<div class="pad H z" style="top:1400px;font-size:56px;color:var(--t)">Uma tela. A equipe toda.</div>`);
+addSt('k3','sun',`<div class="pad z" style="top:330px"><div class="kick" style="color:var(--ink)"><i></i>Me conta</div></div>
+<div class="pad H z" style="top:420px;font-size:112px">Qual pergunta<br>você mais<br>responde no dia?</div>
+<div class="pad z" style="top:900px"><div class="opt" style="justify-content:flex-start;gap:20px">💬 <span>"Quanto custa?"</span></div><div class="opt" style="justify-content:flex-start;gap:20px">🕘 <span>"Tem horário?"</span></div><div class="opt" style="justify-content:flex-start;gap:20px">📦 <span>"Qual o prazo?"</span></div></div>
+<div class="pad z" style="top:1370px;font-size:40px;font-weight:700">Responde no Direct 👇</div>`);
+addSt('k4','coral stripes',`<div class="pad z" style="top:330px"><div class="kick"><i></i>Sexta é Black Friday</div></div>
+<div class="pad H z" style="top:420px;font-size:128px">Vai ter fila<br>no WhatsApp.<br><span style="color:#FFF1C9">Bora organizar?</span></div>
+<div class="pad z" style="top:1000px;font-size:46px;font-weight:700;line-height:1.4">Manda <b style="background:rgba(255,255,255,.22);padding:2px 14px;border-radius:12px">SIMPLIFLY</b> no Direct<br>que eu te mostro como funciona.</div>
+<div class="pad z" style="top:1240px"><div class="url"><i></i>simpliflyone.com</div></div>`);
+
+/* ===== CAPAS ===== */
+capa('capa_odonto','sky','rings','Clínica odontológica','Consulta<br>marcada.<br><span class="co">A paciente<br>não veio.</span>',140);
+capa('capa_contab','sand','stripes','Contador e advogado','Mandou o<br>documento<br>no <span class="co">número<br>errado.</span>',140);
+capa('capa_pilates','lilac','dots','Pilates e fisio','Pediu pra<br>remarcar<br><span class="co">pelo Direct.</span><br>Ninguém viu.',132);
+capa('capa_reserva','coral','stripes','Restaurante','Reserva<br>pra 8.<br><span style="color:#FFF1C9">Visualizado.</span>',160);
+capa('capa_pensar','mint','rings','Corretor, clínica, loja','"Vou<br>pensar."<br><span class="co">E você nunca<br>mais chamou.</span>',136);
+capa('capa_n_academia','sun','rings','Ouça com som 🔊','6h da manhã.<br>Perguntou<br>no Direct.<br><span style="color:#fff;text-shadow:0 4px 0 #E0632A">Ninguém<br>respondeu.</span>',124);
+capa('capa_n_grupo','lilac','dots','Ouça com som 🔊','Postou<br>no grupo.<br><span class="co">Dezenas<br>no privado.</span>',140);
+window.SECTIONS=S;
+</script>
+</body></html>
