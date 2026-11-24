@@ -25,3 +25,6 @@ Tudo validado (1080x1920 ou 1080x1350, 30 fps, −14 LUFS, pico < −2 dBFS). Po
 - k3 "Qual pergunta você mais responde no dia?" · k4 Black Friday "Manda SIMPLIFLY no Direct" (até 27/11)
 
 Narrações originais: vo_academia.mp3, vo_grupo.mp3.
+
+## Publicado em 24/11 às 18h (pedido do João)
+Carrosséis a e b, estático c1, stories k2, k3 e k4 e os 7 Reels. O k1 ficou de fora porque repetia a enquete do dia.
