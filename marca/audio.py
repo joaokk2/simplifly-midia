@@ -117,16 +117,36 @@ def pluck(f, dur=.35):
     s = sum(np.sin(2*np.pi*f*h*t)/h for h in (1,2,3))*np.exp(-t*9)
     return s*.25
 
+def bell(f, dur=.7):
+    n = int(SR * dur); t = np.arange(n) / SR
+    return (np.sin(2*np.pi*f*t) + .5*np.sin(2*np.pi*f*2.76*t)*np.exp(-t*6) + .25*np.sin(2*np.pi*f*5.4*t)*np.exp(-t*12)) * np.exp(-t*5) * .3
+
 def build_alt(dur, drop, transitions, slams, cta, out, style):
     n = int(SR * dur); mus = np.zeros((n, 2)); sfx = np.zeros((n, 2))
-    bpm = 124 if style == 'house' else 130; beat = 60 / bpm; step = beat / 4
+    bpm = {'house':124,'pop':100,'jingle':112}.get(style,130); beat = 60 / bpm; step = beat / 4
     chords = [[220,261.6,329.6],[174.6,220,261.6],[196,246.9,293.7],[164.8,196,246.9]]
+    if style in ('pop','jingle'): chords = [[261.6,329.6,392],[196,246.9,293.7],[220,261.6,329.6],[174.6,220,261.6]]
+    mel = [784,659.3,587.3,523.3, 659.3,587.3,523.3,493.9, 523.3,587.3,659.3,784, 698.5,659.3,587.3,523.3]
     funk = [1,0,0,1, 0,0,1,0, 1,0,0,1, 0,0,1,0]   # tamborzão-like kick
     clap = [0,0,0,0, 1,0,0,1, 0,0,0,0, 1,0,1,0]
     i = 0; t = 0.0
     while t < dur - .2:
         pre = t < drop; s16 = i % 16; bar = (i // 16) % 4
-        if style == 'house':
+        if style == 'pop':
+            if s16 in (0, 10) and (not pre or t > drop - 1.6): put(mus, kick(.4), t, .85)
+            if s16 == 8 and not pre: put(mus, snare(.3), t, .6)
+            if s16 % 2 == 0 and not pre: put(mus, hat(), t, .5, pan=.3)
+            if s16 in (0, 6, 12):
+                for f in chords[bar]: put(mus, pluck(f, .6), t, .55 if pre else .8, pan=.1)
+            if s16 == 0 and not pre: put(mus, sub808(chords[bar][0]/4, beat*3.5), t, .8)
+        elif style == 'jingle':
+            if s16 % 4 == 0 and (not pre or t > drop - 1.6): put(mus, kick(.3), t, .7)
+            if s16 in (4, 12) and not pre: put(mus, snare(.2), t, .45)
+            put(mus, hat() * (.9 if s16 % 2 else .5), t, .5, pan=.35)
+            if s16 % 4 == 0: put(mus, bell(mel[(i//4) % 16]), t, .45 if pre else .6, pan=-.2)
+            if s16 == 0:
+                for f in chords[bar]: put(mus, pluck(f*.5, .9), t, .45)
+        elif style == 'house':
             if s16 % 4 == 0 and (not pre or t > drop - 1.6): put(mus, kick(.35), t, .85)
             if s16 % 4 == 2 and not pre: put(mus, hat(op=True), t, .7, pan=.2)
             if s16 in (4, 12) and not pre: put(mus, snare(), t, .5)
