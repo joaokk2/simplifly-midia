@@ -7,3 +7,5 @@ h carrossel 17h media 18035378855680886
 s2 story 17h media 18658638964061568 (2a tentativa)
 advogado reel 18h media 18129191977714037
 fisio reel narrado 19h media 17958145563039249
+i1 estatico 20h media 18160306690524690
+s3 story 20h media 18107996150345850
