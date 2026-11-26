@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<link rel="stylesheet" href="base.css">
+<style>
+body{background:#999}
+section{position:relative;overflow:hidden;color:var(--ink);margin:0 0 20px}
+.s{width:1080px;height:1350px}.st{width:1080px;height:1920px}
+.tealb{background:radial-gradient(120% 85% at 80% 0%,#2CC2B1 0%,#00A393 35%,#00796F 80%,#006B62 100%);color:#fff}
+.coral{background:linear-gradient(160deg,#FF9A66 0%,#FF783B 45%,#E0632A 100%);color:#fff}
+.sun{background:linear-gradient(165deg,#FFD66B 0%,#FFB443 45%,#FF8A3D 100%)}
+.cream{background:var(--bg)}.mint{background:linear-gradient(170deg,#E6F7F3,#CBEFE7)}.sand{background:linear-gradient(170deg,#FBF3E4,#F3E3C6)}
+.lilac{background:linear-gradient(170deg,#F1EDFF,#E2DAFF)}.sky{background:linear-gradient(170deg,#E3F1FF,#C9E3FF)}
+.coral .mark:before,.tealb .mark:before{background:var(--c)}
+.coral .mark:before{background:#B8441A}
+.H{font-family:'Inter Display';font-weight:900;letter-spacing:-.045em;line-height:.95}
+.num{font-family:'Inter Display';font-weight:900;font-size:200px;letter-spacing:-.06em;line-height:.8;color:var(--c);opacity:.9}
+.kick{color:var(--t)}.tealb .kick,.coral .kick{color:#fff}
+.tealb .kick i{background:#FFB08A}.coral .kick i{background:#fff}
+.sub{font-size:40px;font-weight:600;line-height:1.3;color:var(--mut)}
+.tealb .sub,.coral .sub{color:rgba(255,255,255,.88)}
+.bub{position:relative;max-width:760px;padding:24px 30px 16px;border-radius:30px;font-size:38px;line-height:1.25;background:#fff;box-shadow:0 18px 40px rgba(14,42,39,.12);margin-bottom:22px}
+.bub .tm{display:block;text-align:right;font-size:24px;color:#8a978f;margin-top:4px}
+.bub.o{background:#D9FDD3;margin-left:auto}.bub.l{background:#FFE3D6}
+.card{background:#fff;border-radius:34px;padding:30px 36px;box-shadow:0 18px 50px rgba(14,42,39,.1);display:flex;gap:26px;align-items:center;margin-bottom:24px}
+.card .ic{width:84px;height:84px;border-radius:24px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:38px;flex:none}
+.card b{display:block;font-size:38px;letter-spacing:-.01em}.card span{font-size:28px;color:var(--mut)}
+.chk{width:110px;height:110px;border-radius:32px;background:var(--t);display:flex;align-items:center;justify-content:center;margin-bottom:50px}
+.coral .chk{background:#fff}
+.ring{position:absolute;border-radius:50%;border:6px solid rgba(0,121,111,.12)}
+.tealb .ring,.coral .ring{border-color:rgba(255,255,255,.16)}
+.stripes:after{content:"";position:absolute;inset:-300px;background:repeating-linear-gradient(-35deg,rgba(255,120,59,.09) 0 40px,transparent 40px 120px);pointer-events:none;z-index:0}
+.coral.stripes:after{background:repeating-linear-gradient(-35deg,rgba(255,255,255,.08) 0 40px,transparent 40px 120px)}
+.dots:after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(0,121,111,.15) 5px,transparent 6px);background-size:60px 60px;-webkit-mask-image:linear-gradient(180deg,#000,transparent 50%);pointer-events:none}
+.z{z-index:1}
+.url{display:inline-flex;align-items:center;gap:16px;background:#fff;color:var(--ink);font-weight:800;font-size:44px;padding:26px 38px;border-radius:26px;box-shadow:0 24px 50px rgba(0,0,0,.18)}
+.url i{width:20px;height:20px;border-radius:50%;background:var(--c)}
+.opt{background:#fff;border-radius:28px;padding:34px 40px;font-size:46px;font-weight:800;display:flex;justify-content:space-between;margin-bottom:26px;box-shadow:0 14px 34px rgba(14,42,39,.12);color:var(--ink)}
+.opt em{font-style:normal;color:var(--mut);font-weight:600}
+/* capa */
+.safe{position:absolute;left:0;right:0;top:285px;height:1350px;display:flex;flex-direction:column;justify-content:center;padding:0 90px}
+.tag{display:inline-flex;align-self:flex-start;align-items:center;gap:14px;font-weight:800;font-size:30px;letter-spacing:.12em;text-transform:uppercase;padding:14px 24px;border-radius:99px;background:rgba(255,255,255,.2);color:#fff;margin-bottom:44px}
+.tag i{width:14px;height:14px;border-radius:50%;background:#fff}
+.lt .tag{background:rgba(0,121,111,.12);color:var(--t)}.lt .tag i{background:var(--c)}
+.big{font-family:'Inter Display';font-weight:900;letter-spacing:-.05em;line-height:.92;color:#fff}
+.lt .big{color:var(--ink)}
+.play{position:absolute;right:90px;bottom:360px;width:120px;height:120px;border-radius:50%;background:var(--c);display:flex;align-items:center;justify-content:center;box-shadow:0 20px 40px rgba(255,120,59,.4)}
+.coral .play{background:#fff}
+.lg{position:absolute;left:90px;bottom:375px;height:70px}
+</style></head><body>
+<style>
+.peach{background:linear-gradient(170deg,#FFF1E8,#FFD6C0)}.aqua{background:linear-gradient(170deg,#E2F8F4,#A8E5DB)}
+.grid:after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(0,121,111,.09) 3px,transparent 3px),linear-gradient(90deg,rgba(0,121,111,.09) 3px,transparent 3px);background-size:90px 90px;pointer-events:none;-webkit-mask-image:radial-gradient(90% 70% at 50% 40%,#000,transparent)}
+.coral.grid:after,.tealb.grid:after{background-image:linear-gradient(rgba(255,255,255,.12) 3px,transparent 3px),linear-gradient(90deg,rgba(255,255,255,.12) 3px,transparent 3px)}
+.blob{position:absolute;border-radius:50%;pointer-events:none}
+.hr{font-family:'Inter Display';font-weight:900;font-size:230px;letter-spacing:-.06em;line-height:.8;color:var(--c)}
+.chipx{display:inline-flex;align-items:center;gap:14px;background:#fff;border-radius:99px;padding:18px 30px;font-size:34px;font-weight:800;box-shadow:0 14px 34px rgba(14,42,39,.12)}
+</style>
+<script>
+const LW='logo-white.svg',LD='logo-dark.svg';
+const dark=c=>/tealb|coral/.test(c);
+const brand=(c,i,n)=>`<div class="brand z"><img src="${dark(c)?LW:LD}"></div>`+(n?`<div class="pager z">${Array.from({length:n},(_,k)=>`<b class="${k==i?'on':''}"></b>`).join('')}</div>`:'');
+const rings=`<div class="ring" style="width:900px;height:900px;right:-380px;top:-330px"></div><div class="ring" style="width:1300px;height:1300px;right:-580px;top:-530px"></div>`;
+const blobs=(a='rgba(255,120,59,.16)',b='rgba(0,163,147,.16)')=>`<div class="blob" style="width:760px;height:760px;background:${a};right:-260px;top:-200px"></div><div class="blob" style="width:620px;height:620px;background:${b};left:-300px;bottom:60px"></div>`;
+const S=[];
+function add(id,cls,html,i,n){S.push(id);document.body.insertAdjacentHTML('beforeend',`<section id="${id}" class="s ${cls}">${html}${brand(cls,i,n)}</section>`)}
+function addSt(id,cls,html){S.push(id);document.body.insertAdjacentHTML('beforeend',`<section id="${id}" class="st ${cls}">${html}<img class="z" src="${dark(cls)?LW:LD}" style="position:absolute;left:90px;bottom:250px;height:62px"></section>`)}
+const PLAY='<svg width="54" height="54" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>';
+const PLAYC='<svg width="54" height="54" viewBox="0 0 24 24" fill="#FF783B"><path d="M8 5v14l11-7z"/></svg>';
+function capa(id,cls,deco,tag,html,fs){const lt=!dark(cls);S.push(id);document.body.insertAdjacentHTML('beforeend',`<section id="${id}" class="st ${cls} ${deco=='blobs'?'':deco} ${lt?'lt':''}">${deco=='rings'?rings:''}${deco=='blobs'?blobs(lt?undefined:'rgba(255,255,255,.14)',lt?undefined:'rgba(255,255,255,.10)'):''}<div class="safe z"><div class="tag"><i></i>${tag}</div><div class="big" style="font-size:${fs}px">${html}</div></div><img class="lg z" src="${lt?LD:LW}"><div class="play z">${cls.includes('coral')?PLAYC:PLAY}</div></section>`)}
+const CMT=(c='#DFF5F1')=>`<div style="font-size:34px;font-weight:600;color:${c}">Comenta <b style="background:rgba(255,255,255,.18);padding:2px 12px;border-radius:10px;color:#fff">SIMPLIFLY</b> que eu te mando como funciona.</div>`;
+const IGG='linear-gradient(135deg,#FEDA75,#FA7E1E 30%,#D62976 60%,#962FBF 85%,#4F5BD5)';
+
+</script>
+<style>
+.rose{background:linear-gradient(170deg,#FFF0F4,#FFCBDA)}.lemon{background:linear-gradient(170deg,#FFFBE3,#FFEC9E)}
+.plus:after{content:"";position:absolute;inset:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='110' height='110'%3E%3Cpath d='M55 40v30M40 55h30' stroke='rgba(255,120,59,.22)' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E");-webkit-mask-image:linear-gradient(180deg,#000 10%,transparent 70%)}
+.sun .kick{color:#7A2E0E}.sun .kick i{background:#fff}
+.box{background:#fff;border-radius:34px;height:260px;box-shadow:0 20px 50px rgba(14,42,39,.14);display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:600;color:#9AA8A5}
+.who{display:inline-flex;align-items:center;gap:14px;font-size:30px;font-weight:800;color:var(--t);margin-bottom:18px}
+</style>
+<script>
+/* ===== CARROSSEL G: checklist véspera da Black Friday ===== */
+const NG=7;
+add('g1','tealb grid',`<div class="pad z" style="top:150px"><div class="kick"><i></i>Black Friday é amanhã</div></div>
+<div class="pad H z" style="top:270px;font-size:132px">Checklist de<br>hoje à noite<br>pro seu <span class="mark">WhatsApp.</span></div>
+<div class="pad sub z" style="top:1000px">5 coisas pra deixar prontas. Salva e arrasta →</div>`,0,NG);
+add('g2','cream plus',`<div class="pad z" style="top:120px"><div class="num">01</div><div class="H" style="font-size:96px;margin-top:30px">Resposta pronta<br>pras perguntas<br><span class="co">que se repetem.</span></div></div>
+<div class="pad z" style="top:760px"><div class="bub">Qual o frete? 🚚<span class="tm">00:03</span></div><div class="bub">Aceita Pix?<span class="tm">00:04</span></div><div class="bub">Parcela em quantas vezes?<span class="tm">00:04</span></div></div>`,1,NG);
+add('g3','sky grid',`<div class="pad z" style="top:120px"><div class="num">02</div><div class="H" style="font-size:96px;margin-top:30px">Cada um sabe<br><span class="co">o que atende.</span></div></div>
+<div class="pad z" style="top:680px"><div class="card"><div class="ic" style="background:#00A393">A</div><div><b>Ana</b><span>WhatsApp de vendas</span></div></div><div class="card"><div class="ic" style="background:${IGG}">B</div><div><b>Bruno</b><span>Direct e comentários</span></div></div><div class="card"><div class="ic" style="background:#FF783B">C</div><div><b>Carla</b><span>Trocas e pós-venda</span></div></div></div>`,2,NG);
+add('g4','sand dots',`<div class="pad z" style="top:120px"><div class="num">03</div><div class="H" style="font-size:96px;margin-top:30px">Horário de<br>atendimento<br><span class="co">avisado.</span></div></div>
+<div class="pad z" style="top:820px"><div class="bub o" style="margin-left:0;max-width:880px">Oi! A equipe responde das 8h às 22h. Fora desse horário, nossa assistente já te ajuda por aqui 😉<span class="tm">mensagem automática</span></div></div>`,3,NG);
+add('g5','lilac plus',`<div class="pad z" style="top:120px"><div class="num">04</div><div class="H" style="font-size:96px;margin-top:30px">Link e foto<br>de cada oferta<br><span class="co">à mão.</span></div></div>
+<div class="pad z" style="top:860px"><div class="sub" style="font-size:44px;color:var(--ink);font-weight:700">Nada de procurar foto na galeria com cliente esperando.</div></div>`,4,NG);
+add('g6','mint grid',`<div class="pad z" style="top:120px"><div class="num">05</div><div class="H" style="font-size:96px;margin-top:30px">Lista de quem<br>perguntou<br><span class="co">e não comprou.</span></div></div>
+<div class="pad z" style="top:830px"><div class="bub o" style="margin-left:0;max-width:880px">Oi, Lu! A oferta que você perguntou vai até domingo. Quer que eu separe? 🛍️<span class="tm">sábado de manhã</span></div></div>`,5,NG);
+add('g7','tealb',`${rings}<div class="pad z" style="top:150px"><div class="kick"><i></i>Com o Simplifly</div></div>
+<div class="pad H z" style="top:250px;font-size:100px">Tudo isso<br>numa <span class="mark">tela só.</span></div>
+<div class="pad z" style="top:580px;font-size:40px;font-weight:700;line-height:1.6">✓ Respostas rápidas e IA<br>✓ Fila dividida por atendente<br>✓ Vários WhatsApps + Instagram<br>✓ Etiquetas e disparos</div>
+<div class="pad z" style="top:940px"><div class="url"><i></i>simpliflyone.com</div></div>
+<div class="pad z" style="top:1085px">${CMT()}</div>`,6,NG);
+
+/* ===== CARROSSEL H: horário não confirmado ===== */
+const NH=7;
+add('h1','peach',`${blobs()}<div class="pad z" style="top:150px"><div class="kick" style="color:var(--t)"><i></i>Confirmação de horário</div></div>
+<div class="pad H z" style="top:270px;font-size:136px">Horário não<br>confirmado é<br><span class="mark">cadeira vazia.</span></div>
+<div class="pad sub z" style="top:1000px">A mensagem certa, em 5 negócios →</div>`,0,NH);
+const H=[['mint','Clínica odontológica','Na véspera<br>da consulta.','Oi, Carla! Confirmando sua consulta amanhã às 9h 🦷 Responde 1 pra confirmar ou 2 pra remarcar.'],
+['sand','Barbearia','No dia,<br>de manhã.','Fala, Diego! Seu horário com o Léo é hoje às 18h 💈 Te esperamos!'],
+['sky','Imobiliária','Um dia antes<br>da visita.','Oi, Helena! Visita confirmada: sábado às 10h no apê de 2 quartos 🏡 Te mando a localização?'],
+['lilac','Estúdio de pilates','Antes da aula<br>experimental.','Oi, Bia! Sua aula experimental é amanhã às 7h 🧘 Vem com roupa confortável!'],
+['lemon','Oficina mecânica','Antes de<br>entrar o carro.','Oi, Marcos! Seu carro entra amanhã às 8h pra revisão 🔧 Leva umas 3 horas.']];
+H.forEach(([c,k,h,m],i)=>add('h'+(i+2),c+(i%2?' plus':' dots'),`<div class="pad z" style="top:130px"><div class="num">0${i+1}</div><div class="kick" style="margin-top:30px;color:var(--t)"><i></i>${k}</div><div class="H" style="font-size:100px;margin-top:24px">${h}</div></div>
+<div class="pad z" style="top:800px"><div class="bub o" style="margin-left:0;max-width:880px">${m}<span class="tm">confirmação ✓✓</span></div></div>`,i+1,NH));
+add('h7','coral',`${rings}<div class="pad z" style="top:150px"><div class="kick"><i></i>Com o Simplifly</div></div>
+<div class="pad H z" style="top:250px;font-size:100px">Confirma e<br>lembra <span style="color:#FFF1C9">sem ninguém<br>digitar um<br>por um.</span></div>
+<div class="pad z" style="top:800px;font-size:40px;font-weight:700;line-height:1.6">✓ Disparos e lembretes<br>✓ WhatsApp e Instagram juntos</div>
+<div class="pad z" style="top:980px"><div class="url"><i></i>simpliflyone.com</div></div>
+<div class="pad z" style="top:1120px">${CMT('#FFF1E8')}</div>`,6,NH);
+
+/* ===== ESTÁTICO ===== */
+add('i1','rose grid',`<div class="pad z" style="top:150px"><div class="kick" style="color:var(--t)"><i></i>Verdade simples</div></div>
+<div class="pad H z" style="top:250px;font-size:90px">Seu cliente não sabe quantos WhatsApps você tem.<br><span class="co">Ele só sabe que ninguém respondeu.</span></div>
+<div class="pad z" style="top:790px;display:flex;gap:16px;flex-wrap:wrap"><span class="chipx">📱 WhatsApp Vendas</span><span class="chipx">📱 WhatsApp Loja 2</span><span class="chipx">💬 Direct</span></div>
+<div class="pad H z" style="top:1030px;font-size:50px;color:var(--t)">No Simplifly, tudo cai numa tela só.</div>`,0,0);
+
+/* ===== STORIES ===== */
+addSt('s1','sun plus',`<div class="pad z" style="top:330px"><div class="kick"><i></i>Amanhã é Black Friday</div></div>
+<div class="pad H z" style="top:420px;font-size:120px">Sua equipe<br>pro WhatsApp<br>tá…</div>
+<div class="pad z" style="top:900px"><div class="opt">Pronta <em>💪</em></div><div class="opt">Mais ou menos <em>😅</em></div><div class="opt">Vou atender sozinho <em>🫠</em></div></div>
+<div class="pad z" style="top:1370px;font-size:40px;font-weight:700;color:var(--ink)">Responde no Direct 👇</div>`);
+addSt('s2','aqua',`${blobs()}<div class="pad z" style="top:330px"><div class="kick" style="color:var(--t)"><i></i>Me conta</div></div>
+<div class="pad H z" style="top:420px;font-size:108px">Qual pergunta<br>seu cliente mais<br><span class="co">repete</span> no<br>WhatsApp?</div>
+<div class="pad z" style="top:1000px"><div class="box">Responde aqui no Direct 👇</div></div>
+<div class="pad z" style="top:1320px;font-size:38px;font-weight:700;color:var(--mut)">As melhores viram post 😉</div>`);
+addSt('s3','tealb',`${rings}<div class="pad z" style="top:330px"><div class="kick"><i></i>Do salão à oficina</div></div>
+<div class="pad H z" style="top:420px;font-size:108px">WhatsApp e<br>Instagram<br>numa <span class="mark">tela só.</span></div>
+<div class="pad z" style="top:900px;font-size:44px;font-weight:700;line-height:1.5">Clínica, academia, imobiliária,<br>restaurante, loja…</div>
+<div class="pad z" style="top:1120px"><div class="url"><i></i>simpliflyone.com</div></div>
+<div class="pad z" style="top:1270px;font-size:40px;font-weight:700">Manda <b style="background:rgba(255,255,255,.22);padding:2px 14px;border-radius:12px">SIMPLIFLY</b> no Direct 👇</div>`);
+
+/* ===== CAPAS ===== */
+capa('capa_bfeve','sun','plus','Amanhã é Black Friday','Quem<br>responde à<br><span style="color:#fff">meia-noite?</span>',150);
+capa('capa_advogado','sky','plus','Advocacia','Mandou na<br>sexta.<br><span class="co">Resposta na<br>segunda.</span>',140);
+capa('capa_assist','mint','dots','Assistência técnica','"Já ficou<br>pronto?"<br><span class="co">(pela 4ª vez)</span>',150);
+capa('capa_pousada','rose','blobs','Pousada e hotel','Reserva de<br>Réveillon<br>no Direct.<br><span class="co">Ninguém viu.</span>',132);
+capa('capa_buffet','lilac','grid','Buffet e festas','Orçamento<br>da festa?<br><span class="co">2 dias<br>depois.</span>',150);
+capa('capa_restaurante','sand','plus','Ouça com som 🔊','Reserva pra<br>20 pessoas<br>no Direct.<br><span class="co">Ninguém<br>respondeu.</span>',124);
+capa('capa_fisio','lemon','rings','Ouça com som 🔊','Paciente<br>desmarcou<br>às 7h.<br><span class="co">Ninguém viu.</span>',134);
+window.SECTIONS=S;
+</script>
+</body></html>
