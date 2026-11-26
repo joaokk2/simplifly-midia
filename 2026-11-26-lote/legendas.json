@@ -1,0 +1,121 @@
+{
+ "pousada": {
+  "action": "create_video_post",
+  "params": {
+   "video_url": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/2026-11-26-lote/pousada.mp4",
+   "cover_url": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/capas/capa_pousada.jpg",
+   "share_to_feed": true,
+   "caption": "Pediu reserva pro Réveillon no Direct. Ninguém viu.\n\nPousada e hotel recebem pedido de reserva pelo WhatsApp, pelo Direct, pelo comentário… e quando ninguém olha o Direct, o hóspede reserva na vizinha.\n\nNo Simplifly, Direct e WhatsApp caem na mesma tela, e a IA já responde com a disponibilidade.\n\n👉 simpliflyone.com\nComenta SIMPLIFLY que eu te mando como funciona.\n\n#pousada #hotelaria #reveillon #reservas #atendimentoaocliente"
+  }
+ },
+ "g": {
+  "action": "create_carousel_post",
+  "params": {
+   "image_urls": [
+    "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/2026-11-26-lote/g1.jpg",
+    "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/2026-11-26-lote/g2.jpg",
+    "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/2026-11-26-lote/g3.jpg",
+    "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/2026-11-26-lote/g4.jpg",
+    "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/2026-11-26-lote/g5.jpg",
+    "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/2026-11-26-lote/g6.jpg",
+    "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/2026-11-26-lote/g7.jpg"
+   ],
+   "caption": "Black Friday é amanhã: checklist de hoje à noite pro seu WhatsApp.\n\n5 coisas pra deixar prontas antes da meia-noite:\n1. Resposta pronta pras perguntas que se repetem\n2. Cada pessoa da equipe sabe o que atende\n3. Horário de atendimento avisado\n4. Link e foto de cada oferta à mão\n5. Lista de quem perguntou e não comprou\n\nSalva pra não esquecer.\n\n👉 simpliflyone.com\nComenta SIMPLIFLY que eu te mando como funciona.\n\n#blackfriday #vendaspelowhatsapp #pequenosnegocios #varejo"
+  }
+ },
+ "s1": {
+  "action": "create_story",
+  "params": {
+   "image_url": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/2026-11-26-lote/s1.jpg"
+  }
+ },
+ "bfeve": {
+  "action": "create_video_post",
+  "params": {
+   "video_url": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/2026-11-26-lote/bfeve.mp4",
+   "cover_url": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/capas/capa_bfeve.jpg",
+   "share_to_feed": true,
+   "caption": "Amanhã tem Black Friday. Quem responde à meia-noite?\n\nA promoção vai ao ar 00h. Às 00h05 chega o primeiro \"ainda tem?\". Às 00h30 você tá dormindo e o cliente tá comprando de quem respondeu.\n\nNo Simplifly, a IA responde na hora, manda o link e a equipe pega a fila de manhã, com WhatsApp e Instagram numa tela só.\n\n👉 simpliflyone.com\nComenta SIMPLIFLY que eu te mando como funciona.\n\n#blackfriday #lojavirtual #vendasonline #whatsappbusiness"
+  }
+ },
+ "restaurante": {
+  "action": "create_video_post",
+  "params": {
+   "video_url": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/2026-11-26-lote/n_restaurante.mp4",
+   "cover_url": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/capas/capa_restaurante.jpg",
+   "share_to_feed": true,
+   "caption": "Reserva pra 20 pessoas no Direct. Ninguém respondeu. 🔊\n\nÉ época de confraternização: empresa chama no Direct, no WhatsApp, às 22h… e fecha com quem responde primeiro.\n\nNo Simplifly, Direct e WhatsApp ficam na mesma tela e a IA mostra as datas livres e já segura a reserva.\n\n👉 simpliflyone.com\nComenta SIMPLIFLY que eu te mando como funciona.\n\n#restaurante #confraternizacao #gastronomia #reservas #fimdeano"
+  }
+ },
+ "h": {
+  "action": "create_carousel_post",
+  "params": {
+   "image_urls": [
+    "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/2026-11-26-lote/h1.jpg",
+    "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/2026-11-26-lote/h2.jpg",
+    "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/2026-11-26-lote/h3.jpg",
+    "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/2026-11-26-lote/h4.jpg",
+    "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/2026-11-26-lote/h5.jpg",
+    "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/2026-11-26-lote/h6.jpg",
+    "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/2026-11-26-lote/h7.jpg"
+   ],
+   "caption": "Horário não confirmado é cadeira vazia.\n\nA mensagem certa, na hora certa, em 5 negócios: clínica odontológica, barbearia, imobiliária, estúdio de pilates e oficina mecânica.\n\nCopia a ideia pro seu negócio. E se não quiser digitar uma por uma, o Simplifly manda os lembretes pelo WhatsApp.\n\n👉 simpliflyone.com\nComenta SIMPLIFLY que eu te mando como funciona.\n\n#agendamento #clinicaodontologica #barbearia #imobiliaria #oficinamecanica"
+  }
+ },
+ "s2": {
+  "action": "create_story",
+  "params": {
+   "image_url": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/2026-11-26-lote/s2.jpg"
+  }
+ },
+ "advogado": {
+  "action": "create_video_post",
+  "params": {
+   "video_url": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/2026-11-26-lote/advogado.mp4",
+   "cover_url": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/capas/capa_advogado.jpg",
+   "share_to_feed": true,
+   "caption": "Mandou mensagem na sexta. Resposta na segunda.\n\nQuem procura um escritório geralmente chama dois ou três ao mesmo tempo. Fica com quem responde primeiro.\n\nNo Simplifly, a equipe atende WhatsApp e Instagram numa tela só, e a IA registra o pedido e já agenda o retorno.\n\n👉 simpliflyone.com\nComenta SIMPLIFLY que eu te mando como funciona.\n\n#advocacia #escritoriodeadvocacia #advogados #atendimentoaocliente"
+  }
+ },
+ "fisio": {
+  "action": "create_video_post",
+  "params": {
+   "video_url": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/2026-11-26-lote/n_fisio.mp4",
+   "cover_url": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/capas/capa_fisio.jpg",
+   "share_to_feed": true,
+   "caption": "Paciente desmarcou às 7h. Ninguém viu. 🔊\n\nO fisioterapeuta fica uma hora parado e o horário, que outro paciente queria, fica vazio.\n\nNo Simplifly, a recepção vê WhatsApp e Instagram numa tela só, remarca na hora e oferece o horário livre pra outro paciente.\n\n👉 simpliflyone.com\nComenta SIMPLIFLY que eu te mando como funciona.\n\n#fisioterapia #clinicadefisioterapia #pilates #agendamento"
+  }
+ },
+ "i1": {
+  "action": "create_image_post",
+  "params": {
+   "image_url": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/2026-11-26-lote/i1.jpg",
+   "alt_text": "Arte com o texto: Seu cliente não sabe quantos WhatsApps você tem. Ele só sabe que ninguém respondeu. No Simplifly, tudo cai numa tela só.",
+   "caption": "Seu cliente não sabe quantos WhatsApps você tem. Ele só sabe que ninguém respondeu.\n\nNúmero da loja, número do vendedor, Direct, celular da recepção… pra você são canais diferentes. Pra ele é uma empresa só.\n\nNo Simplifly, todos os números e o Instagram caem numa tela só, com a equipe dividindo a fila.\n\n👉 simpliflyone.com\nComenta SIMPLIFLY que eu te mando como funciona.\n\n#whatsappbusiness #atendimentoaocliente #pequenasempresas #gestaodeequipe"
+  }
+ },
+ "s3": {
+  "action": "create_story",
+  "params": {
+   "image_url": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/2026-11-26-lote/s3.jpg"
+  }
+ },
+ "buffet": {
+  "action": "create_video_post",
+  "params": {
+   "video_url": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/2026-11-26-lote/buffet.mp4",
+   "cover_url": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/capas/capa_buffet.jpg",
+   "share_to_feed": true,
+   "caption": "Pediu orçamento da festa. Resposta 2 dias depois.\n\nMãe que tá organizando festa pede orçamento em três buffets no mesmo dia. Quem responde primeiro já sai na frente.\n\nNo Simplifly, a equipe vê todos os pedidos numa tela só e a IA já manda os pacotes na hora.\n\n👉 simpliflyone.com\nComenta SIMPLIFLY que eu te mando como funciona.\n\n#buffetinfantil #festainfantil #eventos #orcamento"
+  }
+ },
+ "assist": {
+  "action": "create_video_post",
+  "params": {
+   "video_url": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/2026-11-26-lote/assist.mp4",
+   "cover_url": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/capas/capa_assist.jpg",
+   "share_to_feed": true,
+   "caption": "\"Já ficou pronto?\" (pela 4ª vez)\n\nCliente de assistência técnica não quer muito: só saber quando buscar. Quando ninguém avisa, ele pergunta de novo… e da próxima vez leva em outro lugar.\n\nNo Simplifly, o balcão responde WhatsApp e Instagram numa tela só e avisa o cliente assim que o serviço fica pronto.\n\n👉 simpliflyone.com\nComenta SIMPLIFLY que eu te mando como funciona.\n\n#assistenciatecnica #celular #consertodecelular #atendimentoaocliente"
+  }
+ }
+}
