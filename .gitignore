@@ -1,0 +1,5 @@
+marca/*.wav
+marca/*.mp4
+marca/__pycache__/
+marca/sherpa-onnx-whisper-small/
+work/
