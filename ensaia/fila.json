@@ -1,0 +1,149 @@
+{
+ "regra": "Publicar na ordem, 1 item por execução. Depois de publicar, preencher publicado com data e media id, adicionar os pares em ensaia/usados.json e dar push.",
+ "fila": [
+  {
+   "video": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/ensaia/2026-11-27-lote2/01_otica_da_zoom.mp4",
+   "capa": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/ensaia/2026-11-27-lote2/01_otica_da_zoom_capa.jpg",
+   "legenda": "Foto de óculos que vende: dá zoom e procura o defeito.\n\nEla nasceu de uma foto de celular, tirada na mão, na pressa. No ensa.ia você manda essa foto e recebe a armação no rosto, com luz e cenário de verdade. Até o detalhe da haste.\n\nNinguém pergunta se é IA. Só pergunta o preço.\n\n👉 ensaiastudio.com\n\n#otica #oculosdegrau #armacaodeoculos #fotodeproduto #oticas",
+   "pares": "otica 1hbkf99 + otica 1cdq6hk (detalhe haste)",
+   "nome": "01_otica_da_zoom",
+   "publicado": null
+  },
+  {
+   "video": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/ensaia/2026-11-27-lote2/14_cinco_cores.mp4",
+   "capa": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/ensaia/2026-11-27-lote2/14_cinco_cores_capa.jpg",
+   "legenda": "Foto de calçado em todas as cores: cinco cores do mesmo tênis, quantos ensaios isso ia dar?\n\nNo ensa.ia você manda uma foto de cada cor e recebe todas no pé, no mesmo cenário, com a mesma luz. Catálogo inteiro, padronizado, sem marcar ensaio.\n\n👉 ensaiastudio.com\n\n#calcados #lojadecalcados #tenis #fotodeproduto #catalogo",
+   "pares": "conta: Manchester Knit A575 (5 cores)",
+   "nome": "14_cinco_cores",
+   "publicado": null
+  },
+  {
+   "video": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/ensaia/2026-11-27-lote2/11_moda_praia.mp4",
+   "capa": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/ensaia/2026-11-27-lote2/11_moda_praia_capa.jpg",
+   "legenda": "Foto de moda praia: biquíni no manequim não vende verão.\n\nA cliente quer se ver na piscina, no sol, de férias. No ensa.ia você manda a foto da peça e recebe a modelo vestindo, num resort, com luz de fim de tarde. Sem viagem, sem produção.\n\n👉 ensaiastudio.com\n\n#modapraia #biquini #lojademodapraia #fotodeproduto #verao",
+   "pares": "conta: ensaio 4554 moda praia",
+   "nome": "11_moda_praia",
+   "publicado": null
+  },
+  {
+   "video": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/ensaia/2026-11-27-lote2/05_moda_infantil.mp4",
+   "capa": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/ensaia/2026-11-27-lote2/05_moda_infantil_capa.jpg",
+   "legenda": "Foto de moda infantil: mãe não compra roupa, compra o filho usando.\n\nRoupinha esticada na mesa não mostra isso. No ensa.ia você manda essa foto simples e recebe o look vestido, no quintal, na festinha, do jeito da sua cliente. Sem sessão de fotos e sem criança cansada.\n\n👉 ensaiastudio.com\n\n#modainfantil #lojainfantil #roupainfantil #fotodeproduto #modakids",
+   "pares": "outros 1d2dfrl + outros 12p1qy1",
+   "nome": "05_moda_infantil",
+   "publicado": null
+  },
+  {
+   "video": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/ensaia/2026-11-27-lote2/15_tenis_academia.mp4",
+   "capa": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/ensaia/2026-11-27-lote2/15_tenis_academia_capa.jpg",
+   "legenda": "Foto de tênis de academia: fotografado na loja, não tem graça nenhuma.\n\nQuem treina quer ver no pé, na academia. No ensa.ia a mesma foto vira treino de verdade: academia, luz, atitude. O cliente se vê usando e chama no direct.\n\n👉 ensaiastudio.com\n\n#tenisdeacademia #tenisfeminino #calcados #fotodeproduto #lojista",
+   "pares": "conta: TORX ultra + TORX rosa",
+   "nome": "15_tenis_academia",
+   "publicado": null
+  },
+  {
+   "video": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/ensaia/2026-11-27-lote2/10_relogio.mp4",
+   "capa": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/ensaia/2026-11-27-lote2/10_relogio_capa.jpg",
+   "legenda": "Foto de relógio que vende: no balcão de vidro, com reflexo e luz amarela, ele parece qualquer um.\n\nNo ensa.ia, o mesmo relógio vai pro pulso, num jantar, com luz de restaurante. Agora ele parece o que é: um presente.\n\n👉 ensaiastudio.com\n\n#relogios #relojoaria #relogiomasculino #fotodeproduto #lojista",
+   "pares": "conta: ensaio 9352 relogio",
+   "nome": "10_relogio",
+   "publicado": null
+  },
+  {
+   "video": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/ensaia/2026-11-27-lote2/02_otica_foto_no_rosto.mp4",
+   "capa": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/ensaia/2026-11-27-lote2/02_otica_foto_no_rosto_capa.jpg",
+   "legenda": "Foto de óculos no rosto: quando o cliente pede e você não tem, ele some.\n\nCom o ensa.ia, a mesma foto da armação em cima da mesa vira foto no rosto. De frente, de lado, do jeito que o cliente quer ver. Você responde na hora e fecha a venda.\n\n👉 ensaiastudio.com\n\n#otica #oculos #armacao #fotodeproduto #vendasonline",
+   "pares": "otica rv1mxe (frente e 3/4)",
+   "nome": "02_otica_foto_no_rosto",
+   "publicado": null
+  },
+  {
+   "video": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/ensaia/2026-11-27-lote2/07_brinquedos.mp4",
+   "capa": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/ensaia/2026-11-27-lote2/07_brinquedos_capa.jpg",
+   "legenda": "Foto de brinquedo que vende: qual dessas faz você querer comprar?\n\nParado na prateleira, embalado no plástico, ele não mostra a diversão. No ensa.ia a mesma foto vira uma criança brincando, numa festa, num jardim. É isso que faz a mãe comprar.\n\n👉 ensaiastudio.com\n\n#brinquedos #lojadebrinquedos #brinquedoeducativo #fotodeproduto #lojista",
+   "pares": "outros 1o84e0y + outros 1jt7chq",
+   "nome": "07_brinquedos",
+   "publicado": null
+  },
+  {
+   "video": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/ensaia/2026-11-27-lote2/12_fitness.mp4",
+   "capa": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/ensaia/2026-11-27-lote2/12_fitness_capa.jpg",
+   "legenda": "Foto de moda fitness: na loja, a peça não mostra o caimento.\n\nE é isso que a cliente quer saber: será que modela? No ensa.ia a peça aparece vestida, num treino de verdade. Ela vê o caimento e compra sem medo.\n\n👉 ensaiastudio.com\n\n#modafitness #roupafitness #lojafitness #fotodeproduto #lojista",
+   "pares": "conta: ensaio 9448 fitness",
+   "nome": "12_fitness",
+   "publicado": null
+  },
+  {
+   "video": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/ensaia/2026-11-27-lote2/16_tenis_infantil.mp4",
+   "capa": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/ensaia/2026-11-27-lote2/16_tenis_infantil_capa.jpg",
+   "legenda": "Foto de tênis infantil: a primeira pergunta da mãe é se fica bonito no pé dele.\n\nNo ensa.ia, o tênis vai pro pé de uma criança, numa festinha no quintal. A mãe vê, imagina e compra.\n\n👉 ensaiastudio.com\n\n#tenisinfantil #calcadoinfantil #lojainfantil #fotodeproduto #lojista",
+   "pares": "conta: BOX 200 infantil BK2050 + BK2155",
+   "nome": "16_tenis_infantil",
+   "publicado": null
+  },
+  {
+   "video": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/ensaia/2026-11-27-lote2/13_joias.mp4",
+   "capa": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/ensaia/2026-11-27-lote2/13_joias_capa.jpg",
+   "legenda": "Foto de joia que vende: foto de cima, com sombra do celular, faz a peça parecer qualquer coisa.\n\nNo ensa.ia, o colar vai pro pescoço, com pele, luz e brilho de verdade. É aí que a peça vale o que custa.\n\n👉 ensaiastudio.com\n\n#joias #semijoias #acessorios #fotodeproduto #lojadejoias",
+   "pares": "conta: ensaio 3211 colar",
+   "nome": "13_joias",
+   "publicado": null
+  },
+  {
+   "video": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/ensaia/2026-11-27-lote2/09_todos_os_angulos.mp4",
+   "capa": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/ensaia/2026-11-27-lote2/09_todos_os_angulos_capa.jpg",
+   "legenda": "Foto de roupa em todos os ângulos: o cliente pediu foto de costas?\n\nNo ensa.ia é a mesma peça, com o mesmo modelo, no mesmo cenário: de frente, de costas e no detalhe. Um produto, todos os ângulos, sem ensaio.\n\n👉 ensaiastudio.com\n\n#modamasculina #camiseta #lojaderoupa #fotodeproduto #lojista",
+   "pares": "moda masc q81msh (detalhe, 3/4, costas)",
+   "nome": "09_todos_os_angulos",
+   "publicado": null
+  },
+  {
+   "video": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/ensaia/2026-11-27-lote2/18_marca_propria.mp4",
+   "capa": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/ensaia/2026-11-27-lote2/18_marca_propria_capa.jpg",
+   "legenda": "Foto para marca própria: sua marca precisa parecer marca grande, e com foto de celular não parece.\n\nNo ensa.ia, o seu tênis ganha campanha de grife: rua, grafite, atitude. Mesmo produto, outro valor.\n\n👉 ensaiastudio.com\n\n#marcapropria #calcados #tenis #fotodeproduto #empreendedorismo",
+   "pares": "conta: SOUND (sem fotos de cima do verde)",
+   "nome": "18_marca_propria",
+   "publicado": null
+  },
+  {
+   "video": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/ensaia/2026-11-27-lote2/03_otica_infantil.mp4",
+   "capa": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/ensaia/2026-11-27-lote2/03_otica_infantil_capa.jpg",
+   "legenda": "Óculos infantil: a mãe só compra quando consegue imaginar no filho.\n\nNa bancada, fica a dúvida. Com o ensa.ia, a armação aparece no rosto de uma criança, sorrindo, num cenário de casa.\n\n👉 ensaiastudio.com\n\n#oticainfantil #oculosinfantil #otica #fotodeproduto #lojista",
+   "pares": "otica xu01gc (frente e 3/4)",
+   "nome": "03_otica_infantil",
+   "publicado": null
+  },
+  {
+   "video": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/ensaia/2026-11-27-lote2/06_colecao_nova.mp4",
+   "capa": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/ensaia/2026-11-27-lote2/06_colecao_nova_capa.jpg",
+   "legenda": "Coleção nova chegou e nenhuma foto boa pra postar?\n\nEnsaio demora e criança não para quieta. Com o ensa.ia você fotografa no celular, do jeito que der, e recebe tudo vestido, com cenário e luz de campanha. Posta hoje, não daqui a um mês.\n\n👉 ensaiastudio.com\n\n#modainfantil #modabebe #lojainfantil #fotodeproduto #lojista",
+   "pares": "moda na9lpu + moda 1h9ywky",
+   "nome": "06_colecao_nova",
+   "publicado": null
+  },
+  {
+   "video": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/ensaia/2026-11-27-lote2/17_treino_em_casa.mp4",
+   "capa": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/ensaia/2026-11-27-lote2/17_treino_em_casa_capa.jpg",
+   "legenda": "Foto de calçado feminino: ela comprou porque viu o tênis num treino igual ao dela, não na prateleira da loja.\n\nNo ensa.ia, cada cor vira foto de campanha, no cenário que a sua cliente vive. Ela se identifica e compra.\n\n👉 ensaiastudio.com\n\n#tenisfeminino #calcados #lojadecalcados #fotodeproduto #lojista",
+   "pares": "conta: BOX 200 BX2655 creme/camel + preto/nude",
+   "nome": "17_treino_em_casa",
+   "publicado": null
+  },
+  {
+   "video": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/ensaia/2026-11-27-lote2/08_laco.mp4",
+   "capa": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/ensaia/2026-11-27-lote2/08_laco_capa.jpg",
+   "legenda": "Foto de acessório infantil: produto pequeno some em cima da mesa.\n\nNo ensa.ia, o laço vai pro cabelo, numa festa, com luz bonita. Agora a cliente vê o tamanho, a cor e como fica.\n\n👉 ensaiastudio.com\n\n#lacinhos #lacoinfantil #acessoriosinfantis #fotodeproduto #lojista",
+   "pares": "outros 1kxj3ic",
+   "nome": "08_laco",
+   "publicado": null
+  },
+  {
+   "video": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/ensaia/2026-11-27-lote2/04_otica_direct.mp4",
+   "capa": "https://raw.githubusercontent.com/joaokk2/simplifly-midia/main/ensaia/2026-11-27-lote2/04_otica_direct_capa.jpg",
+   "legenda": "Foto de ótica que enche o direct: tem azul? serve no meu filho? quanto fica?\n\nNão foi o produto que mudou. Foi a foto: da armação na mesa para a armação no rosto, com cara de campanha. Feito no ensa.ia, a partir da foto do celular.\n\n👉 ensaiastudio.com\n\n#otica #oculosinfantil #armacaodeoculos #fotodeproduto #instagramparanegocios",
+   "pares": "otica 1ir0yap + otica 1k64cyv",
+   "nome": "04_otica_direct",
+   "publicado": null
+  }
+ ]
+}
